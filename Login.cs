@@ -24,10 +24,20 @@ namespace InventorySystem
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            // Add email validation
+            if (ValidationUtils.ValidateEmail(txtEmail.Text))
+            {
+                MessageBox.Show("Email format is not valid", "Validation Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            } else if (!ValidationUtils.ValidatePassword(txtPassword.Text).Equals("valid"))
+            {
+                MessageBox.Show(ValidationUtils.ValidatePassword(txtPassword.Text));
+            }
+
             using (MySqlConnection conn = Connection.GetConnection())
             {
-                var cmd = new MySqlCommand("SELECT id, email, password FROM users WHERE username = @username AND password = @password", conn);
-                cmd.Parameters.AddWithValue("@username", txtEmail.Text);
+                var cmd = new MySqlCommand("SELECT id, email, password FROM users WHERE email = @email AND password = @password", conn);
+                cmd.Parameters.AddWithValue("@email", txtEmail.Text);
                 cmd.Parameters.AddWithValue("@password", txtPassword.Text);
                 var reader = cmd.ExecuteReader();
                 if (reader.Read())

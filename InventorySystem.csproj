@@ -27,4 +27,10 @@
     </EmbeddedResource>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Forms\Manager\" />
+    <Folder Include="Forms\Staff\" />
+    <Folder Include="Forms\Superadmin\" />
+  </ItemGroup>
+
 </Project>
