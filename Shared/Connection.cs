@@ -7,9 +7,9 @@ namespace InventorySystem.Shared
 {
     internal class Connection
     {
-        private string connectionString = "server=localhost;user=root;password=;database=inventorysystem";
+        private static string connectionString = "server=localhost;user=root;password=;database=inventorysystem";
 
-        public MySqlConnection GetConnection()
+        public static MySqlConnection GetConnection()
         {
             var conn = new MySqlConnection(connectionString);
             conn.Open();
