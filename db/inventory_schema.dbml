@@ -1,0 +1,118 @@
+
+Project InventoryManagement {
+  database_type: 'MySQL'
+  Note: 'Inventory quantities are derived from StockMovements, not stored on Products.'
+}
+
+Enum UserRole {
+  Admin
+  Staff
+}
+
+Enum MovementType {
+  In
+  Out
+  AdjustIn
+  AdjustOut
+}
+
+Table Users {
+  UserId int [pk, increment]
+  Username varchar(50) [not null, unique]
+  Password varchar(255) [not null]
+  FullName varchar(120) [not null]
+  UserRole UserRole [not null, default: 'Staff']
+  IsActive boolean [not null, default: true]
+  CreatedAt datetime [not null, default: `CURRENT_TIMESTAMP`]
+}
+
+Table Categories {
+  CategoryId int [pk, increment]
+  CategoryName varchar(100) [not null, unique]
+  Description varchar(255)
+  IsActive boolean [not null, default: true]
+}
+
+Table Units {
+  UnitId smallint [pk, increment]
+  UnitName varchar(50) [not null, unique]
+  UnitSymbol varchar(15) [not null, unique]
+  AllowsFraction boolean [not null, default: false]
+}
+
+Table Suppliers {
+  SupplierId int [pk, increment]
+  SupplierName varchar(150) [not null]
+  ContactPerson varchar(120)
+  Phone varchar(35)
+  Email varchar(150)
+  Address varchar(255)
+  IsActive boolean [not null, default: true]
+
+  indexes {
+    SupplierName [name: 'IdxSuppliersName']
+  }
+}
+
+Table Products {
+  ProductId bigint [pk, increment]
+  Sku varchar(50) [not null, unique]
+  ProductName varchar(150) [not null]
+  Description varchar(500)
+  CategoryId int [not null]
+  UnitId smallint [not null]
+  SupplierId int
+  CostPrice decimal(12,2) [not null, default: 0, note: 'CHECK CostPrice >= 0']
+  SellingPrice decimal(12,2) [not null, default: 0, note: 'CHECK SellingPrice >= 0']
+  ReorderLevel decimal(12,3) [not null, default: 0, note: 'CHECK ReorderLevel >= 0']
+  IsActive boolean [not null, default: true]
+  CreatedAt datetime [not null, default: `CURRENT_TIMESTAMP`]
+  UpdatedAt datetime [not null, default: `CURRENT_TIMESTAMP`, note: 'MySQL ON UPDATE CURRENT_TIMESTAMP']
+
+  indexes {
+    ProductName [name: 'IdxProductsName']
+    CategoryId [name: 'IdxProductsCategory']
+    SupplierId [name: 'IdxProductsSupplier']
+  }
+}
+
+Table StockMovements {
+  MovementId bigint [pk, increment]
+  ProductId bigint [not null]
+  MovementType MovementType [not null]
+  Quantity decimal(12,3) [not null, note: 'CHECK Quantity > 0']
+  ReferenceNo varchar(60)
+  Remarks varchar(255)
+  CreatedBy int
+  CreatedAt datetime [not null, default: `CURRENT_TIMESTAMP`]
+
+  indexes {
+    (ProductId, CreatedAt) [name: 'IdxMovementProductTime']
+    ReferenceNo [name: 'IdxMovementReference']
+    CreatedAt [name: 'IdxMovementTime']
+  }
+}
+
+Table AuditLogs {
+  AuditId bigint [pk, increment]
+  ActorUserId int
+  ActionType varchar(30) [not null]
+  EntityName varchar(60) [not null]
+  EntityId bigint
+  OldData json
+  NewData json
+  LoggedAt datetime [not null, default: `CURRENT_TIMESTAMP`]
+
+  indexes {
+    LoggedAt [name: 'IdxAuditDate']
+    (EntityName, EntityId) [name: 'IdxAuditEntity']
+    ActorUserId [name: 'IdxAuditActor']
+  }
+}
+
+Ref: Products.CategoryId > Categories.CategoryId [delete: restrict]
+Ref: Products.UnitId > Units.UnitId [delete: restrict]
+Ref: Products.SupplierId > Suppliers.SupplierId [delete: set null]
+Ref: StockMovements.ProductId > Products.ProductId [delete: restrict]
+Ref: StockMovements.CreatedBy > Users.UserId [delete: set null]
+Ref: AuditLogs.ActorUserId > Users.UserId [delete: set null]
