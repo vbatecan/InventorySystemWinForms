@@ -1,10 +1,8 @@
 using InventorySystem.Models.Enums;
 using MySql.Data.MySqlClient;
 
-namespace InventorySystem.Models
-{
-    public class User
-    {
+namespace InventorySystem.Models {
+    public class User {
         private int UserId;
         private string Username = string.Empty;
         private string Password = string.Empty;
@@ -29,7 +27,7 @@ namespace InventorySystem.Models
             CreatedAt = createdAt;
         }
 
-        public User FromMySqlReader(MySqlDataReader reader)
+        public static User FromReader(MySqlDataReader reader)
         {
             return new User(
                 reader.GetInt32("UserId"),
