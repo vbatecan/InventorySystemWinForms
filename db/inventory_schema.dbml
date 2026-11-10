@@ -81,6 +81,7 @@ Table StockMovements {
   ProductId bigint [not null]
   MovementType MovementType [not null]
   Quantity decimal(12,3) [not null, note: 'CHECK Quantity > 0']
+  StorageLocation varchar(60)
   ReferenceNo varchar(60)
   Remarks varchar(255)
   CreatedBy int

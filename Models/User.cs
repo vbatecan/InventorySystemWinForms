@@ -3,13 +3,13 @@ using MySql.Data.MySqlClient;
 
 namespace InventorySystem.Models {
     public class User {
-        private int UserId;
-        private string Username = string.Empty;
-        private string Password = string.Empty;
-        private string FullName = string.Empty;
-        private UserRole UserRole = UserRole.Staff;
-        private bool IsActive;
-        private DateTime CreatedAt;
+        public int UserId;
+        public string Username = string.Empty;
+        public string Password = string.Empty;
+        public string FullName = string.Empty;
+        public UserRole UserRole = UserRole.Staff;
+        public bool IsActive;
+        public DateTime CreatedAt;
 
         public User()
         {
