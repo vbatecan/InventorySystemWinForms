@@ -8,11 +8,14 @@ using System.Windows.Forms;
 
 namespace InventorySystem.Forms.Superadmin
 {
-    public partial class SuperAdminForm : Form
-    {
-        public SuperAdminForm()
-        {
+    public partial class SuperAdminForm : Form {
+        public SuperAdminForm() {
             InitializeComponent();
+        }
+
+        private void btnCreateUser_Click(object sender, EventArgs e) {
+            CreateUserForm createUserForm = new CreateUserForm();
+            createUserForm.Show();
         }
     }
 }

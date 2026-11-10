@@ -26,14 +26,33 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "SuperAdminForm";
+        private void InitializeComponent() {
+            btnCreateUser = new Button();
+            SuspendLayout();
+            // 
+            // btnCreateUser
+            // 
+            btnCreateUser.Location = new Point(22, 12);
+            btnCreateUser.Name = "btnCreateUser";
+            btnCreateUser.Size = new Size(75, 23);
+            btnCreateUser.TabIndex = 0;
+            btnCreateUser.Text = "Create User";
+            btnCreateUser.UseVisualStyleBackColor = true;
+            btnCreateUser.Click += btnCreateUser_Click;
+            // 
+            // SuperAdminForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(btnCreateUser);
+            Name = "SuperAdminForm";
+            Text = "SuperAdminForm";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private Button btnCreateUser;
     }
 }

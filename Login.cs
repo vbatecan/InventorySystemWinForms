@@ -29,7 +29,7 @@ namespace InventorySystem
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            if (ValidationUtils.ValidateEmail(txtEmail.Text))
+            if (ValidationUtils.ValidateEmail(txtUsername.Text))
             {
                 MessageBox.Show("Email format is not valid", "Validation Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -38,7 +38,7 @@ namespace InventorySystem
                 MessageBox.Show(ValidationUtils.ValidatePassword(txtPassword.Text));
             }
 
-            User? user = authService.Login(txtEmail.Text, txtPassword.Text);
+            User? user = authService.Login(txtUsername.Text, txtPassword.Text);
 
             switch (user.UserRole) {
                 case UserRole.Admin:

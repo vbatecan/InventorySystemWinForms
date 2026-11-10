@@ -9,7 +9,7 @@ namespace InventorySystem.Services {
         public User Login(string username, string password)
         {
             using (MySqlConnection conn = Connection.GetConnection()) {
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM users WHERE username = @username AND password = @password", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM Users WHERE username = @username AND password = @password", conn);
                 cmd.Parameters.AddWithValue("@username", username);
                 cmd.Parameters.AddWithValue("@password", password);
                 MySqlDataReader reader = cmd.ExecuteReader();
