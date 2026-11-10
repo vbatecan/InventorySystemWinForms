@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace InventorySystem.Forms.Manager
 {
-    public partial class UserControl1 : UserControl
+    public partial class dashboard : UserControl
     {
-        public UserControl1()
+        public dashboard()
         {
             InitializeComponent();
         }

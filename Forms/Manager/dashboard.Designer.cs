@@ -1,6 +1,6 @@
 ﻿namespace InventorySystem.Forms.Manager
 {
-    partial class UserControl1
+    partial class dashboard
     {
         /// <summary> 
         /// Required designer variable.
@@ -30,11 +30,12 @@
         {
             SuspendLayout();
             // 
-            // UserControl1
+            // dashboard
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            Name = "UserControl1";
+            BackColor = Color.White;
+            Name = "dashboard";
             Size = new Size(1413, 699);
             ResumeLayout(false);
         }

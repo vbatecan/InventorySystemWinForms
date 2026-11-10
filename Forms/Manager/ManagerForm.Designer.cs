@@ -30,20 +30,22 @@
         {
             panel1 = new Panel();
             label1 = new Label();
-            button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
-            button4 = new Button();
+            btnDashoboard = new Button();
+            btnProductManagement = new Button();
+            btnInventoryManagement = new Button();
+            btnInventoryReports = new Button();
+            panel2 = new Panel();
+            panel3 = new Panel();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(6, 38, 75);
-            panel1.Controls.Add(button4);
-            panel1.Controls.Add(button3);
-            panel1.Controls.Add(button2);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(btnInventoryReports);
+            panel1.Controls.Add(btnInventoryManagement);
+            panel1.Controls.Add(btnProductManagement);
+            panel1.Controls.Add(btnDashoboard);
             panel1.Controls.Add(label1);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
@@ -62,42 +64,61 @@
             label1.TabIndex = 1;
             label1.Text = "INVENTORY SYSTEM";
             // 
-            // button1
+            // btnDashoboard
             // 
-            button1.Location = new Point(3, 126);
-            button1.Name = "button1";
-            button1.Size = new Size(237, 34);
-            button1.TabIndex = 2;
-            button1.Text = "M";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnDashoboard.ForeColor = Color.Black;
+            btnDashoboard.Location = new Point(-7, 126);
+            btnDashoboard.Name = "btnDashoboard";
+            btnDashoboard.Size = new Size(253, 34);
+            btnDashoboard.TabIndex = 2;
+            btnDashoboard.Text = "Dashboard";
+            btnDashoboard.UseVisualStyleBackColor = true;
+            btnDashoboard.Click += button1_Click;
             // 
-            // button2
+            // btnProductManagement
             // 
-            button2.Location = new Point(3, 166);
-            button2.Name = "button2";
-            button2.Size = new Size(237, 34);
-            button2.TabIndex = 3;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            btnProductManagement.Location = new Point(-7, 166);
+            btnProductManagement.Name = "btnProductManagement";
+            btnProductManagement.Size = new Size(253, 34);
+            btnProductManagement.TabIndex = 3;
+            btnProductManagement.Text = "Product Management";
+            btnProductManagement.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnInventoryManagement
             // 
-            button3.Location = new Point(51, 232);
-            button3.Name = "button3";
-            button3.Size = new Size(112, 34);
-            button3.TabIndex = 4;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            btnInventoryManagement.Location = new Point(-7, 206);
+            btnInventoryManagement.Name = "btnInventoryManagement";
+            btnInventoryManagement.Size = new Size(253, 34);
+            btnInventoryManagement.TabIndex = 4;
+            btnInventoryManagement.Text = "Inventory Management";
+            btnInventoryManagement.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnInventoryReports
             // 
-            button4.Location = new Point(51, 286);
-            button4.Name = "button4";
-            button4.Size = new Size(112, 34);
-            button4.TabIndex = 5;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
+            btnInventoryReports.Location = new Point(-7, 246);
+            btnInventoryReports.Name = "btnInventoryReports";
+            btnInventoryReports.Size = new Size(253, 34);
+            btnInventoryReports.TabIndex = 5;
+            btnInventoryReports.Text = "Inventory Reports";
+            btnInventoryReports.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(11, 61, 117);
+            panel2.Dock = DockStyle.Top;
+            panel2.Location = new Point(240, 0);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1018, 75);
+            panel2.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.White;
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(240, 75);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1018, 589);
+            panel3.TabIndex = 2;
             // 
             // managerform
             // 
@@ -105,10 +126,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1258, 664);
+            Controls.Add(panel3);
+            Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "managerform";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Manager Form";
+            WindowState = FormWindowState.Maximized;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -117,10 +141,12 @@
         #endregion
 
         private Panel panel1;
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button btnInventoryReports;
+        private Button btnInventoryManagement;
+        private Button btnProductManagement;
+        private Button btnDashoboard;
         private Label label1;
+        private Panel panel2;
+        private Panel panel3;
     }
 }
