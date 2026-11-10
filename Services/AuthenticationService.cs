@@ -1,12 +1,11 @@
-﻿using InventorySystem.Interfaces;
-using InventorySystem.Models;
+﻿using InventorySystem.Models;
 using InventorySystem.Shared;
 using MySql.Data.MySqlClient;
 
 namespace InventorySystem.Services {
-    public class AuthenticationService : IAuthentication {
+    public class AuthenticationService {
 
-        public User Login(string username, string password)
+        public User? Login(string username, string password)
         {
             MySqlConnection conn = Connection.Instance;
 
@@ -16,6 +15,8 @@ namespace InventorySystem.Services {
             if (reader.HasRows) {
                 return User.FromReader(reader);
             }
+
+            return null;
         }
     }
 }

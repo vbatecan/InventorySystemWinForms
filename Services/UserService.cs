@@ -8,7 +8,7 @@ using System.Data.Common;
 using System.Text;
 
 namespace InventorySystem.Services {
-    public class UserService : IUser {
+    public class UserService {
         public User GetUser(int userId)
         {
             MySqlConnection conn = Connection.Instance;
