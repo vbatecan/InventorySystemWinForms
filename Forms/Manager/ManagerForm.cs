@@ -8,11 +8,16 @@ using System.Windows.Forms;
 
 namespace InventorySystem.Forms.Manager
 {
-    public partial class ManagerForm : Form
+    public partial class managerform : Form
     {
-        public ManagerForm()
+        public managerform()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

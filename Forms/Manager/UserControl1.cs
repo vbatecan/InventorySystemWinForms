@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace InventorySystem.Forms.Manager
 {
-    public partial class Purchasing : Form
+    public partial class UserControl1 : UserControl
     {
-        public Purchasing()
+        public UserControl1()
         {
             InitializeComponent();
         }
