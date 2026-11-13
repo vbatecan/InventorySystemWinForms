@@ -14,5 +14,10 @@ namespace InventorySystem.Forms.Manager
         {
             InitializeComponent();
         }
+
+        private void ManagerForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
