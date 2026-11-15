@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace InventorySystem.Forms.Manager
 {
-    public partial class managerform : Form
+    public partial class ManagerForm : Form
     {
-        public managerform()
+        public ManagerForm()
         {
             InitializeComponent();
         }

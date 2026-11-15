@@ -1,6 +1,6 @@
 ﻿namespace InventorySystem.Forms.Manager
 {
-    partial class managerform
+    partial class ManagerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-<<<<<<< HEAD
             dataGridView1 = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
@@ -49,9 +48,7 @@
             Controls.Add(dataGridView1);
             Name = "ManagerForm";
             Text = "ManagerForm";
-            Load += ManagerForm_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-=======
             panel1 = new Panel();
             label1 = new Label();
             button1 = new Button();
@@ -94,7 +91,6 @@
             button1.TabIndex = 2;
             button1.Text = "M";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -130,26 +126,22 @@
             BackColor = Color.White;
             ClientSize = new Size(1258, 664);
             Controls.Add(panel1);
-            Name = "managerform";
+            Name = "ManagerForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Manager Form";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
->>>>>>> f899c949ece026dc06e8f2de582d279c3cc692fc
             ResumeLayout(false);
         }
 
         #endregion
 
-<<<<<<< HEAD
         private DataGridView dataGridView1;
-=======
         private Panel panel1;
         private Button button4;
         private Button button3;
         private Button button2;
         private Button button1;
         private Label label1;
->>>>>>> f899c949ece026dc06e8f2de582d279c3cc692fc
     }
 }
