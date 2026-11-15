@@ -1,4 +1,5 @@
-﻿using InventorySystem.Models;
+﻿using InventorySystem.Exceptions;
+using InventorySystem.Models;
 using InventorySystem.Shared;
 using MySql.Data.MySqlClient;
 using System.Security.Authentication;
@@ -14,12 +15,13 @@ namespace InventorySystem.Services {
                 cmd.Parameters.AddWithValue("@password", password);
                 MySqlDataReader reader = cmd.ExecuteReader();
 
+                reader.Read();
                 if (reader.HasRows) {
                     return User.FromReader(reader);
                 }
-
-                throw new InvalidCredentialException("Username or password is invalid.");
             }
+            
+            throw new InvalidLoginDetailsException("Username or password is invalid.");
         }
     }
 }

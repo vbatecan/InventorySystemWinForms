@@ -27,6 +27,16 @@ namespace InventorySystem.Models {
             CreatedAt = createdAt;
         }
 
+        public User(string username, string password, string fullName, UserRole userRole, bool isActive)
+        {
+            Username = username;
+            Password = password;
+            FullName = fullName;
+            UserRole = userRole;
+            IsActive = isActive;
+            CreatedAt = DateTime.Now;
+        }
+
         public static User FromReader(MySqlDataReader reader)
         {
             return new User(

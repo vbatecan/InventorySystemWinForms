@@ -1,3 +1,4 @@
+using InventorySystem.Exceptions;
 using InventorySystem.Forms.Manager;
 using InventorySystem.Forms.Superadmin;
 using InventorySystem.Models;
@@ -38,27 +39,32 @@ namespace InventorySystem
                 MessageBox.Show(ValidationUtils.ValidatePassword(txtPassword.Text));
             }
 
-            User? user = authService.Login(txtUsername.Text, txtPassword.Text);
+            try {
 
-            switch (user.UserRole) {
-                case UserRole.Admin:
-                    SuperAdminForm superAdminForm = new SuperAdminForm();
-                    superAdminForm.Show();
-                    break;
-                case UserRole.Staff:
-                    StaffForm staffForm = new StaffForm();
-                    staffForm.Show();
-                    break;
-                case UserRole.Manager:
-                    ManagerForm managerForm = new ManagerForm();
-                    managerForm.Show();
-                    break;
-                default:
-                    MessageBox.Show("Invalid user role");
-                    break;
+                User? user = authService.Login(txtUsername.Text, txtPassword.Text);
+
+                switch (user.UserRole) {
+                    case UserRole.Admin:
+                        SuperAdminForm superAdminForm = new SuperAdminForm();
+                        superAdminForm.Show();
+                        break;
+                    case UserRole.Staff:
+                        StaffForm staffForm = new StaffForm();
+                        staffForm.Show();
+                        break;
+                    case UserRole.Manager:
+                        ManagerForm managerForm = new ManagerForm();
+                        managerForm.Show();
+                        break;
+                    default:
+                        MessageBox.Show("Invalid user role");
+                        break;
+                }
+
+                Hide();
+            } catch (InvalidLoginDetailsException) {
+                MessageBox.Show("Username or password is invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-                
-            Hide();
         }
 
         private void txtEmail_TextChanged(object sender, EventArgs e)
