@@ -45,7 +45,7 @@ namespace InventorySystem
 
                 switch (user.UserRole) {
                     case UserRole.Admin:
-                        SuperAdminForm superAdminForm = new SuperAdminForm();
+                        AdminForm superAdminForm = new AdminForm();
                         superAdminForm.Show();
                         break;
                     case UserRole.Staff:
