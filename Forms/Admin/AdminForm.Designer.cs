@@ -1,6 +1,6 @@
 ﻿namespace InventorySystem.Forms.Superadmin
 {
-    partial class SuperAdminForm
+    partial class AdminForm
     {
         /// <summary>
         /// Required designer variable.
@@ -114,14 +114,14 @@
             // 
             errorProvider.ContainerControl = this;
             // 
-            // SuperAdminForm
+            // AdminForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(tabControl1);
             Controls.Add(btnCreateUser);
-            Name = "SuperAdminForm";
+            Name = "AdminForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "SuperAdminForm";
             Load += SuperAdminForm_Load;

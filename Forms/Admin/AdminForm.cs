@@ -10,8 +10,8 @@ using System.Windows.Forms;
 
 namespace InventorySystem.Forms.Superadmin
 {
-    public partial class SuperAdminForm : Form {
-        public SuperAdminForm() {
+    public partial class AdminForm : Form {
+        public AdminForm() {
             InitializeComponent();
         }
 
