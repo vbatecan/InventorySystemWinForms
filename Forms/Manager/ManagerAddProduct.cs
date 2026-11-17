@@ -6,12 +6,9 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace InventorySystem.Forms.Manager
-{
-    public partial class UserControl1 : UserControl
-    {
-        public UserControl1()
-        {
+namespace InventorySystem.Forms.Manager {
+    public partial class ManagerAddProduct : Form {
+        public ManagerAddProduct() {
             InitializeComponent();
         }
     }

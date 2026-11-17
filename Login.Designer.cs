@@ -108,6 +108,7 @@
             txtPassword.Font = new Font("Segoe UI", 12F);
             txtPassword.Location = new Point(27, 161);
             txtPassword.Name = "txtPassword";
+            txtPassword.PlaceholderText = "Enter your password";
             txtPassword.Size = new Size(294, 29);
             txtPassword.TabIndex = 3;
             // 
@@ -126,6 +127,7 @@
             txtUsername.Font = new Font("Segoe UI", 12F);
             txtUsername.Location = new Point(27, 58);
             txtUsername.Name = "txtUsername";
+            txtUsername.PlaceholderText = "Enter your username";
             txtUsername.Size = new Size(294, 29);
             txtUsername.TabIndex = 1;
             txtUsername.TextChanged += txtEmail_TextChanged;
