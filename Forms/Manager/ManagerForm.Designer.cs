@@ -55,6 +55,15 @@
             textBox1 = new TextBox();
             pictureBox3 = new PictureBox();
             panel7 = new Panel();
+            cbxStatus = new ComboBox();
+            btnAddProduct = new Button();
+            cbxSuppliers = new ComboBox();
+            cbxCategories = new ComboBox();
+            txtSearch = new TextBox();
+            dgvProducts = new DataGridView();
+            btnDeactivate = new Button();
+            btnEdit = new Button();
+            btnDelete = new Button();
             panel6 = new Panel();
             pictureBox1 = new PictureBox();
             label5 = new Label();
@@ -64,15 +73,6 @@
             tabCategories = new TabPage();
             tabUnits = new TabPage();
             tabReports = new TabPage();
-            btnDelete = new Button();
-            btnEdit = new Button();
-            btnDeactivate = new Button();
-            dgvProducts = new DataGridView();
-            txtSearch = new TextBox();
-            cbxCategories = new ComboBox();
-            cbxSuppliers = new ComboBox();
-            btnAddProduct = new Button();
-            cbxStatus = new ComboBox();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -82,9 +82,9 @@
             panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -409,6 +409,99 @@
             panel7.Size = new Size(914, 483);
             panel7.TabIndex = 1;
             // 
+            // cbxStatus
+            // 
+            cbxStatus.FormattingEnabled = true;
+            cbxStatus.Location = new Point(674, 8);
+            cbxStatus.Name = "cbxStatus";
+            cbxStatus.Size = new Size(121, 29);
+            cbxStatus.TabIndex = 8;
+            // 
+            // btnAddProduct
+            // 
+            btnAddProduct.BackColor = Color.Navy;
+            btnAddProduct.FlatStyle = FlatStyle.Flat;
+            btnAddProduct.ForeColor = SystemColors.Control;
+            btnAddProduct.Location = new Point(801, 5);
+            btnAddProduct.Name = "btnAddProduct";
+            btnAddProduct.Size = new Size(110, 36);
+            btnAddProduct.TabIndex = 7;
+            btnAddProduct.Text = "Add Product";
+            btnAddProduct.UseVisualStyleBackColor = false;
+            // 
+            // cbxSuppliers
+            // 
+            cbxSuppliers.FormattingEnabled = true;
+            cbxSuppliers.Location = new Point(547, 8);
+            cbxSuppliers.Name = "cbxSuppliers";
+            cbxSuppliers.Size = new Size(121, 29);
+            cbxSuppliers.TabIndex = 6;
+            // 
+            // cbxCategories
+            // 
+            cbxCategories.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbxCategories.FlatStyle = FlatStyle.System;
+            cbxCategories.FormattingEnabled = true;
+            cbxCategories.Items.AddRange(new object[] { "All Categories" });
+            cbxCategories.Location = new Point(420, 8);
+            cbxCategories.Name = "cbxCategories";
+            cbxCategories.Size = new Size(121, 29);
+            cbxCategories.TabIndex = 5;
+            // 
+            // txtSearch
+            // 
+            txtSearch.Location = new Point(5, 8);
+            txtSearch.Name = "txtSearch";
+            txtSearch.PlaceholderText = "Search by SKU, Product Name, or Description";
+            txtSearch.Size = new Size(409, 29);
+            txtSearch.TabIndex = 4;
+            // 
+            // dgvProducts
+            // 
+            dgvProducts.BackgroundColor = SystemColors.ButtonFace;
+            dgvProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvProducts.Location = new Point(5, 43);
+            dgvProducts.Name = "dgvProducts";
+            dgvProducts.Size = new Size(906, 393);
+            dgvProducts.TabIndex = 3;
+            // 
+            // btnDeactivate
+            // 
+            btnDeactivate.BackColor = Color.Gainsboro;
+            btnDeactivate.FlatAppearance.BorderColor = Color.Gray;
+            btnDeactivate.FlatStyle = FlatStyle.Flat;
+            btnDeactivate.ForeColor = SystemColors.ActiveCaptionText;
+            btnDeactivate.Location = new Point(569, 442);
+            btnDeactivate.Name = "btnDeactivate";
+            btnDeactivate.Size = new Size(110, 36);
+            btnDeactivate.TabIndex = 2;
+            btnDeactivate.Text = "Deactivate";
+            btnDeactivate.UseVisualStyleBackColor = false;
+            // 
+            // btnEdit
+            // 
+            btnEdit.BackColor = Color.Navy;
+            btnEdit.FlatStyle = FlatStyle.Flat;
+            btnEdit.ForeColor = SystemColors.Control;
+            btnEdit.Location = new Point(685, 442);
+            btnEdit.Name = "btnEdit";
+            btnEdit.Size = new Size(110, 36);
+            btnEdit.TabIndex = 1;
+            btnEdit.Text = "Edit";
+            btnEdit.UseVisualStyleBackColor = false;
+            // 
+            // btnDelete
+            // 
+            btnDelete.BackColor = Color.Maroon;
+            btnDelete.FlatStyle = FlatStyle.Flat;
+            btnDelete.ForeColor = SystemColors.Control;
+            btnDelete.Location = new Point(801, 442);
+            btnDelete.Name = "btnDelete";
+            btnDelete.Size = new Size(110, 36);
+            btnDelete.TabIndex = 0;
+            btnDelete.Text = "Delete";
+            btnDelete.UseVisualStyleBackColor = false;
+            // 
             // panel6
             // 
             panel6.Controls.Add(pictureBox1);
@@ -494,99 +587,6 @@
             tabReports.Text = "Reports";
             tabReports.UseVisualStyleBackColor = true;
             // 
-            // btnDelete
-            // 
-            btnDelete.BackColor = Color.Maroon;
-            btnDelete.FlatStyle = FlatStyle.Flat;
-            btnDelete.ForeColor = SystemColors.Control;
-            btnDelete.Location = new Point(801, 442);
-            btnDelete.Name = "btnDelete";
-            btnDelete.Size = new Size(110, 36);
-            btnDelete.TabIndex = 0;
-            btnDelete.Text = "Delete";
-            btnDelete.UseVisualStyleBackColor = false;
-            // 
-            // btnEdit
-            // 
-            btnEdit.BackColor = Color.Navy;
-            btnEdit.FlatStyle = FlatStyle.Flat;
-            btnEdit.ForeColor = SystemColors.Control;
-            btnEdit.Location = new Point(685, 442);
-            btnEdit.Name = "btnEdit";
-            btnEdit.Size = new Size(110, 36);
-            btnEdit.TabIndex = 1;
-            btnEdit.Text = "Edit";
-            btnEdit.UseVisualStyleBackColor = false;
-            // 
-            // btnDeactivate
-            // 
-            btnDeactivate.BackColor = Color.Gainsboro;
-            btnDeactivate.FlatAppearance.BorderColor = Color.Gray;
-            btnDeactivate.FlatStyle = FlatStyle.Flat;
-            btnDeactivate.ForeColor = SystemColors.ActiveCaptionText;
-            btnDeactivate.Location = new Point(569, 442);
-            btnDeactivate.Name = "btnDeactivate";
-            btnDeactivate.Size = new Size(110, 36);
-            btnDeactivate.TabIndex = 2;
-            btnDeactivate.Text = "Deactivate";
-            btnDeactivate.UseVisualStyleBackColor = false;
-            // 
-            // dgvProducts
-            // 
-            dgvProducts.BackgroundColor = SystemColors.ButtonFace;
-            dgvProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvProducts.Location = new Point(5, 43);
-            dgvProducts.Name = "dgvProducts";
-            dgvProducts.Size = new Size(906, 393);
-            dgvProducts.TabIndex = 3;
-            // 
-            // txtSearch
-            // 
-            txtSearch.Location = new Point(5, 8);
-            txtSearch.Name = "txtSearch";
-            txtSearch.PlaceholderText = "Search by SKU, Product Name, or Description";
-            txtSearch.Size = new Size(409, 29);
-            txtSearch.TabIndex = 4;
-            // 
-            // cbxCategories
-            // 
-            cbxCategories.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbxCategories.FlatStyle = FlatStyle.System;
-            cbxCategories.FormattingEnabled = true;
-            cbxCategories.Items.AddRange(new object[] { "All Categories" });
-            cbxCategories.Location = new Point(420, 8);
-            cbxCategories.Name = "cbxCategories";
-            cbxCategories.Size = new Size(121, 29);
-            cbxCategories.TabIndex = 5;
-            // 
-            // cbxSuppliers
-            // 
-            cbxSuppliers.FormattingEnabled = true;
-            cbxSuppliers.Location = new Point(547, 8);
-            cbxSuppliers.Name = "cbxSuppliers";
-            cbxSuppliers.Size = new Size(121, 29);
-            cbxSuppliers.TabIndex = 6;
-            // 
-            // btnAddProduct
-            // 
-            btnAddProduct.BackColor = Color.Navy;
-            btnAddProduct.FlatStyle = FlatStyle.Flat;
-            btnAddProduct.ForeColor = SystemColors.Control;
-            btnAddProduct.Location = new Point(801, 5);
-            btnAddProduct.Name = "btnAddProduct";
-            btnAddProduct.Size = new Size(110, 36);
-            btnAddProduct.TabIndex = 7;
-            btnAddProduct.Text = "Add Product";
-            btnAddProduct.UseVisualStyleBackColor = false;
-            // 
-            // cbxStatus
-            // 
-            cbxStatus.FormattingEnabled = true;
-            cbxStatus.Location = new Point(674, 8);
-            cbxStatus.Name = "cbxStatus";
-            cbxStatus.Size = new Size(121, 29);
-            cbxStatus.TabIndex = 8;
-            // 
             // ManagerForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -612,10 +612,10 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvProducts).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgvProducts).EndInit();
             ResumeLayout(false);
         }
 
