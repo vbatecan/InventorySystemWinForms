@@ -127,6 +127,7 @@
             // 
             // panelContainer
             // 
+            panelContainer.BackColor = Color.FromArgb(245, 248, 253);
             panelContainer.Dock = DockStyle.Fill;
             panelContainer.Location = new Point(240, 0);
             panelContainer.Name = "panelContainer";

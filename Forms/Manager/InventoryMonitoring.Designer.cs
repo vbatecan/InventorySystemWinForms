@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             pnlPageHeader = new Panel();
             picPageIcon = new PictureBox();
             lblPageDescription = new Label();
@@ -86,6 +86,15 @@
             lblTrendTitle = new Label();
             pnlTrendHeader = new Panel();
             pnlAlerts = new Panel();
+            btnViewAllNotifications = new Button();
+            pnlAlert4 = new Panel();
+            lblAlertTime4 = new Label();
+            lblAlert4 = new Label();
+            picAlert4 = new PictureBox();
+            pnlAlert3 = new Panel();
+            label2 = new Label();
+            lblAlert3 = new Label();
+            picAlert3 = new PictureBox();
             pnlAlert2 = new Panel();
             lblAlertTime2 = new Label();
             lblAlert2 = new Label();
@@ -97,15 +106,6 @@
             pictureBox6 = new PictureBox();
             lblAlertsTitle = new Label();
             pnlAlertsHeader = new Panel();
-            pnlAlert3 = new Panel();
-            picAlert3 = new PictureBox();
-            lblAlert3 = new Label();
-            label2 = new Label();
-            pnlAlert4 = new Panel();
-            picAlert4 = new PictureBox();
-            lblAlert4 = new Label();
-            lblAlertTime4 = new Label();
-            btnViewAllNotifications = new Button();
             pnlPageHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picPageIcon).BeginInit();
             pnlFilters.SuspendLayout();
@@ -124,15 +124,15 @@
             ((System.ComponentModel.ISupportInitialize)chartStockTrend).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             pnlAlerts.SuspendLayout();
+            pnlAlert4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picAlert4).BeginInit();
+            pnlAlert3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picAlert3).BeginInit();
             pnlAlert2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picAlert2).BeginInit();
             pnlAlert1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picAlert1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            pnlAlert3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picAlert3).BeginInit();
-            pnlAlert4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)picAlert4).BeginInit();
             SuspendLayout();
             // 
             // pnlPageHeader
@@ -312,26 +312,26 @@
             dgvInventory.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvInventory.BackgroundColor = Color.White;
             dgvInventory.BorderStyle = BorderStyle.None;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.FromArgb(230, 239, 252);
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(10, 30, 70);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(230, 239, 252);
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(10, 30, 70);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            dgvInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(230, 239, 252);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(10, 30, 70);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(230, 239, 252);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(10, 30, 70);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
+            dgvInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvInventory.ColumnHeadersHeight = 38;
             dgvInventory.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dgvInventory.ColumnHeadersVisible = false;
             dgvInventory.Columns.AddRange(new DataGridViewColumn[] { colSKU, colProductName, colCategory, colCurrentStock, colReorderLevel, colStockStatus, colLastUpdated });
-            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = Color.White;
-            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle10.ForeColor = Color.FromArgb(10, 30, 70);
-            dataGridViewCellStyle10.SelectionBackColor = Color.FromArgb(65, 145, 225);
-            dataGridViewCellStyle10.SelectionForeColor = Color.White;
-            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.False;
-            dgvInventory.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = Color.White;
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(10, 30, 70);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(65, 145, 225);
+            dataGridViewCellStyle5.SelectionForeColor = Color.White;
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
+            dgvInventory.DefaultCellStyle = dataGridViewCellStyle5;
             dgvInventory.GridColor = Color.FromArgb(215, 226, 242);
             dgvInventory.Location = new Point(0, 42);
             dgvInventory.MultiSelect = false;
@@ -368,8 +368,8 @@
             // 
             // colCurrentStock
             // 
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            colCurrentStock.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            colCurrentStock.DefaultCellStyle = dataGridViewCellStyle2;
             colCurrentStock.FillWeight = 9.505529F;
             colCurrentStock.HeaderText = "Current Stock";
             colCurrentStock.Name = "colCurrentStock";
@@ -378,8 +378,8 @@
             // 
             // colReorderLevel
             // 
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            colReorderLevel.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            colReorderLevel.DefaultCellStyle = dataGridViewCellStyle3;
             colReorderLevel.FillWeight = 22.7769814F;
             colReorderLevel.HeaderText = "Reorder Level";
             colReorderLevel.Name = "colReorderLevel";
@@ -388,8 +388,8 @@
             // 
             // colStockStatus
             // 
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            colStockStatus.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            colStockStatus.DefaultCellStyle = dataGridViewCellStyle4;
             colStockStatus.FillWeight = 67.66586F;
             colStockStatus.HeaderText = "Stock Status";
             colStockStatus.Name = "colStockStatus";
@@ -657,48 +657,48 @@
             // 
             chartStockTrend.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             chartStockTrend.BorderlineWidth = 0;
-            chartArea2.AxisX.IsLabelAutoFit = false;
-            chartArea2.AxisX.LabelStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            chartArea2.AxisX.LabelStyle.ForeColor = Color.FromArgb(10, 30, 70);
-            chartArea2.AxisY.IsLabelAutoFit = false;
-            chartArea2.AxisY.LabelStyle.Font = new Font("Segoe UI", 9F);
-            chartArea2.AxisY.LabelStyle.ForeColor = Color.FromArgb(10, 30, 70);
-            chartArea2.AxisY.MajorGrid.LineColor = Color.FromArgb(220, 230, 245);
-            chartArea2.AxisY.Minimum = 0D;
-            chartArea2.BorderWidth = 0;
-            chartArea2.Name = "ChartArea1";
-            chartStockTrend.ChartAreas.Add(chartArea2);
-            legend2.Alignment = StringAlignment.Center;
-            legend2.BackColor = Color.White;
-            legend2.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
-            legend2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            legend2.IsTextAutoFit = false;
-            legend2.Name = "Legend1";
-            chartStockTrend.Legends.Add(legend2);
+            chartArea1.AxisX.IsLabelAutoFit = false;
+            chartArea1.AxisX.LabelStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            chartArea1.AxisX.LabelStyle.ForeColor = Color.FromArgb(10, 30, 70);
+            chartArea1.AxisY.IsLabelAutoFit = false;
+            chartArea1.AxisY.LabelStyle.Font = new Font("Segoe UI", 9F);
+            chartArea1.AxisY.LabelStyle.ForeColor = Color.FromArgb(10, 30, 70);
+            chartArea1.AxisY.MajorGrid.LineColor = Color.FromArgb(220, 230, 245);
+            chartArea1.AxisY.Minimum = 0D;
+            chartArea1.BorderWidth = 0;
+            chartArea1.Name = "ChartArea1";
+            chartStockTrend.ChartAreas.Add(chartArea1);
+            legend1.Alignment = StringAlignment.Center;
+            legend1.BackColor = Color.White;
+            legend1.Docking = System.Windows.Forms.DataVisualization.Charting.Docking.Top;
+            legend1.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            legend1.IsTextAutoFit = false;
+            legend1.Name = "Legend1";
+            chartStockTrend.Legends.Add(legend1);
             chartStockTrend.Location = new Point(10, 47);
             chartStockTrend.Name = "chartStockTrend";
-            series3.BorderWidth = 3;
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Color = Color.FromArgb(0, 55, 170);
-            series3.Legend = "Legend1";
-            series3.MarkerSize = 7;
-            series3.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series3.Name = "Total Stock";
-            series3.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series3.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            series4.BorderWidth = 3;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series4.Color = Color.FromArgb(65, 160, 255);
-            series4.Legend = "Legend1";
-            series4.MarkerSize = 7;
-            series4.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series4.Name = "Low Stock Items";
-            series4.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
-            series4.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
-            chartStockTrend.Series.Add(series3);
-            chartStockTrend.Series.Add(series4);
+            series1.BorderWidth = 3;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Color = Color.FromArgb(0, 55, 170);
+            series1.Legend = "Legend1";
+            series1.MarkerSize = 7;
+            series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series1.Name = "Total Stock";
+            series1.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series1.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            series2.BorderWidth = 3;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series2.Color = Color.FromArgb(65, 160, 255);
+            series2.Legend = "Legend1";
+            series2.MarkerSize = 7;
+            series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series2.Name = "Low Stock Items";
+            series2.XValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.String;
+            series2.YValueType = System.Windows.Forms.DataVisualization.Charting.ChartValueType.Int32;
+            chartStockTrend.Series.Add(series1);
+            chartStockTrend.Series.Add(series2);
             chartStockTrend.Size = new Size(873, 213);
             chartStockTrend.TabIndex = 3;
             chartStockTrend.Text = "chart1";
@@ -747,6 +747,99 @@
             pnlAlerts.Name = "pnlAlerts";
             pnlAlerts.Size = new Size(442, 270);
             pnlAlerts.TabIndex = 5;
+            // 
+            // btnViewAllNotifications
+            // 
+            btnViewAllNotifications.Cursor = Cursors.Hand;
+            btnViewAllNotifications.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnViewAllNotifications.ForeColor = Color.FromArgb(0, 75, 190);
+            btnViewAllNotifications.Location = new Point(265, 232);
+            btnViewAllNotifications.Name = "btnViewAllNotifications";
+            btnViewAllNotifications.Size = new Size(155, 28);
+            btnViewAllNotifications.TabIndex = 6;
+            btnViewAllNotifications.Text = "View All Notifications →";
+            btnViewAllNotifications.TextAlign = ContentAlignment.MiddleRight;
+            btnViewAllNotifications.UseVisualStyleBackColor = true;
+            // 
+            // pnlAlert4
+            // 
+            pnlAlert4.Controls.Add(lblAlertTime4);
+            pnlAlert4.Controls.Add(lblAlert4);
+            pnlAlert4.Controls.Add(picAlert4);
+            pnlAlert4.Location = new Point(10, 182);
+            pnlAlert4.Name = "pnlAlert4";
+            pnlAlert4.Size = new Size(420, 43);
+            pnlAlert4.TabIndex = 6;
+            // 
+            // lblAlertTime4
+            // 
+            lblAlertTime4.AutoSize = true;
+            lblAlertTime4.BackColor = Color.Transparent;
+            lblAlertTime4.ForeColor = Color.FromArgb(90, 110, 150);
+            lblAlertTime4.Location = new Point(349, 14);
+            lblAlertTime4.Name = "lblAlertTime4";
+            lblAlertTime4.Size = new Size(56, 15);
+            lblAlertTime4.TabIndex = 7;
+            lblAlertTime4.Text = "07:20 AM";
+            // 
+            // lblAlert4
+            // 
+            lblAlert4.BackColor = Color.Transparent;
+            lblAlert4.Location = new Point(55, 15);
+            lblAlert4.Name = "lblAlert4";
+            lblAlert4.Size = new Size(285, 14);
+            lblAlert4.TabIndex = 7;
+            lblAlert4.Text = "New stock added: Laptop Stand (20 pcs).";
+            // 
+            // picAlert4
+            // 
+            picAlert4.BackColor = Color.FromArgb(65, 160, 255);
+            picAlert4.Location = new Point(8, 15);
+            picAlert4.Name = "picAlert4";
+            picAlert4.Size = new Size(12, 12);
+            picAlert4.SizeMode = PictureBoxSizeMode.CenterImage;
+            picAlert4.TabIndex = 7;
+            picAlert4.TabStop = false;
+            // 
+            // pnlAlert3
+            // 
+            pnlAlert3.Controls.Add(label2);
+            pnlAlert3.Controls.Add(lblAlert3);
+            pnlAlert3.Controls.Add(picAlert3);
+            pnlAlert3.Location = new Point(10, 138);
+            pnlAlert3.Name = "pnlAlert3";
+            pnlAlert3.Size = new Size(420, 43);
+            pnlAlert3.TabIndex = 5;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.ForeColor = Color.FromArgb(90, 110, 150);
+            label2.Location = new Point(349, 14);
+            label2.Name = "label2";
+            label2.Size = new Size(56, 15);
+            label2.TabIndex = 6;
+            label2.Text = "07:35 AM";
+            // 
+            // lblAlert3
+            // 
+            lblAlert3.BackColor = Color.Transparent;
+            lblAlert3.Location = new Point(55, 14);
+            lblAlert3.Name = "lblAlert3";
+            lblAlert3.Size = new Size(285, 14);
+            lblAlert3.TabIndex = 6;
+            lblAlert3.Text = "External SSD 1TB is running low.";
+            // 
+            // picAlert3
+            // 
+            picAlert3.BackColor = Color.FromArgb(255, 165, 35);
+            picAlert3.Location = new Point(8, 14);
+            picAlert3.Name = "picAlert3";
+            picAlert3.Size = new Size(12, 12);
+            picAlert3.SizeMode = PictureBoxSizeMode.CenterImage;
+            picAlert3.TabIndex = 6;
+            picAlert3.TabStop = false;
             // 
             // pnlAlert2
             // 
@@ -856,99 +949,6 @@
             pnlAlertsHeader.Size = new Size(440, 42);
             pnlAlertsHeader.TabIndex = 0;
             // 
-            // pnlAlert3
-            // 
-            pnlAlert3.Controls.Add(label2);
-            pnlAlert3.Controls.Add(lblAlert3);
-            pnlAlert3.Controls.Add(picAlert3);
-            pnlAlert3.Location = new Point(10, 138);
-            pnlAlert3.Name = "pnlAlert3";
-            pnlAlert3.Size = new Size(420, 43);
-            pnlAlert3.TabIndex = 5;
-            // 
-            // picAlert3
-            // 
-            picAlert3.BackColor = Color.FromArgb(255, 165, 35);
-            picAlert3.Location = new Point(8, 14);
-            picAlert3.Name = "picAlert3";
-            picAlert3.Size = new Size(12, 12);
-            picAlert3.SizeMode = PictureBoxSizeMode.CenterImage;
-            picAlert3.TabIndex = 6;
-            picAlert3.TabStop = false;
-            // 
-            // lblAlert3
-            // 
-            lblAlert3.BackColor = Color.Transparent;
-            lblAlert3.Location = new Point(55, 14);
-            lblAlert3.Name = "lblAlert3";
-            lblAlert3.Size = new Size(285, 14);
-            lblAlert3.TabIndex = 6;
-            lblAlert3.Text = "External SSD 1TB is running low.";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.ForeColor = Color.FromArgb(90, 110, 150);
-            label2.Location = new Point(349, 14);
-            label2.Name = "label2";
-            label2.Size = new Size(56, 15);
-            label2.TabIndex = 6;
-            label2.Text = "07:35 AM";
-            // 
-            // pnlAlert4
-            // 
-            pnlAlert4.Controls.Add(lblAlertTime4);
-            pnlAlert4.Controls.Add(lblAlert4);
-            pnlAlert4.Controls.Add(picAlert4);
-            pnlAlert4.Location = new Point(10, 182);
-            pnlAlert4.Name = "pnlAlert4";
-            pnlAlert4.Size = new Size(420, 43);
-            pnlAlert4.TabIndex = 6;
-            // 
-            // picAlert4
-            // 
-            picAlert4.BackColor = Color.FromArgb(65, 160, 255);
-            picAlert4.Location = new Point(8, 15);
-            picAlert4.Name = "picAlert4";
-            picAlert4.Size = new Size(12, 12);
-            picAlert4.SizeMode = PictureBoxSizeMode.CenterImage;
-            picAlert4.TabIndex = 7;
-            picAlert4.TabStop = false;
-            // 
-            // lblAlert4
-            // 
-            lblAlert4.BackColor = Color.Transparent;
-            lblAlert4.Location = new Point(55, 15);
-            lblAlert4.Name = "lblAlert4";
-            lblAlert4.Size = new Size(285, 14);
-            lblAlert4.TabIndex = 7;
-            lblAlert4.Text = "New stock added: Laptop Stand (20 pcs).";
-            // 
-            // lblAlertTime4
-            // 
-            lblAlertTime4.AutoSize = true;
-            lblAlertTime4.BackColor = Color.Transparent;
-            lblAlertTime4.ForeColor = Color.FromArgb(90, 110, 150);
-            lblAlertTime4.Location = new Point(349, 14);
-            lblAlertTime4.Name = "lblAlertTime4";
-            lblAlertTime4.Size = new Size(56, 15);
-            lblAlertTime4.TabIndex = 7;
-            lblAlertTime4.Text = "07:20 AM";
-            // 
-            // btnViewAllNotifications
-            // 
-            btnViewAllNotifications.Cursor = Cursors.Hand;
-            btnViewAllNotifications.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnViewAllNotifications.ForeColor = Color.FromArgb(0, 75, 190);
-            btnViewAllNotifications.Location = new Point(265, 232);
-            btnViewAllNotifications.Name = "btnViewAllNotifications";
-            btnViewAllNotifications.Size = new Size(155, 28);
-            btnViewAllNotifications.TabIndex = 6;
-            btnViewAllNotifications.Text = "View All Notifications →";
-            btnViewAllNotifications.TextAlign = ContentAlignment.MiddleRight;
-            btnViewAllNotifications.UseVisualStyleBackColor = true;
-            // 
             // InventoryMonitoring
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -965,6 +965,7 @@
             MinimumSize = new Size(1000, 650);
             Name = "InventoryMonitoring";
             Size = new Size(1387, 808);
+            Load += InventoryMonitoring_Load;
             pnlPageHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picPageIcon).EndInit();
             pnlFilters.ResumeLayout(false);
@@ -988,6 +989,12 @@
             ((System.ComponentModel.ISupportInitialize)chartStockTrend).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             pnlAlerts.ResumeLayout(false);
+            pnlAlert4.ResumeLayout(false);
+            pnlAlert4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picAlert4).EndInit();
+            pnlAlert3.ResumeLayout(false);
+            pnlAlert3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picAlert3).EndInit();
             pnlAlert2.ResumeLayout(false);
             pnlAlert2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picAlert2).EndInit();
@@ -995,12 +1002,6 @@
             pnlAlert1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)picAlert1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            pnlAlert3.ResumeLayout(false);
-            pnlAlert3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)picAlert3).EndInit();
-            pnlAlert4.ResumeLayout(false);
-            pnlAlert4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)picAlert4).EndInit();
             ResumeLayout(false);
         }
 

@@ -54,5 +54,10 @@ namespace InventorySystem.Forms.Manager
         {
 
         }
+
+        private void InventoryMonitoring_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
