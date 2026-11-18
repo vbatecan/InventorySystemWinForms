@@ -33,8 +33,29 @@
             picPageIcon = new PictureBox();
             lblPageDescription = new Label();
             StaffPageTitle = new Label();
+            panel1 = new Panel();
+            Movement = new ComboBox();
+            MovementType = new Label();
+            ProdCategory = new ComboBox();
+            Category = new Label();
+            ProductSearch = new TextBox();
+            Search = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            dataGridView1 = new DataGridView();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            btnSearch = new Button();
+            btnStockOutClear = new Button();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
+            label6 = new Label();
             pnlPageHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picPageIcon).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // label1
@@ -50,6 +71,7 @@
             // pnlPageHeader
             // 
             pnlPageHeader.BackColor = Color.FromArgb(245, 248, 253);
+            pnlPageHeader.BorderStyle = BorderStyle.Fixed3D;
             pnlPageHeader.Controls.Add(picPageIcon);
             pnlPageHeader.Controls.Add(lblPageDescription);
             pnlPageHeader.Controls.Add(StaffPageTitle);
@@ -92,17 +114,217 @@
             StaffPageTitle.Text = "Stock History";
             StaffPageTitle.TextAlign = ContentAlignment.MiddleLeft;
             // 
+            // panel1
+            // 
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(btnSearch);
+            panel1.Controls.Add(btnStockOutClear);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(Movement);
+            panel1.Controls.Add(ProductSearch);
+            panel1.Controls.Add(MovementType);
+            panel1.Controls.Add(Search);
+            panel1.Controls.Add(ProdCategory);
+            panel1.Controls.Add(Category);
+            panel1.Location = new Point(20, 115);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(988, 125);
+            panel1.TabIndex = 4;
+            // 
+            // Movement
+            // 
+            Movement.BackColor = Color.White;
+            Movement.DropDownStyle = ComboBoxStyle.DropDownList;
+            Movement.FormattingEnabled = true;
+            Movement.IntegralHeight = false;
+            Movement.Location = new Point(755, 27);
+            Movement.Name = "Movement";
+            Movement.Size = new Size(175, 23);
+            Movement.TabIndex = 5;
+            // 
+            // MovementType
+            // 
+            MovementType.BackColor = Color.Transparent;
+            MovementType.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            MovementType.Location = new Point(638, 27);
+            MovementType.Name = "MovementType";
+            MovementType.Size = new Size(111, 23);
+            MovementType.TabIndex = 6;
+            MovementType.Text = "Movement Type :";
+            MovementType.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // ProdCategory
+            // 
+            ProdCategory.BackColor = Color.White;
+            ProdCategory.DropDownStyle = ComboBoxStyle.DropDownList;
+            ProdCategory.ForeColor = Color.FromArgb(10, 30, 70);
+            ProdCategory.FormattingEnabled = true;
+            ProdCategory.IntegralHeight = false;
+            ProdCategory.Location = new Point(451, 27);
+            ProdCategory.Name = "ProdCategory";
+            ProdCategory.Size = new Size(175, 23);
+            ProdCategory.TabIndex = 7;
+            // 
+            // Category
+            // 
+            Category.BackColor = Color.Transparent;
+            Category.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Category.Location = new Point(389, 27);
+            Category.Name = "Category";
+            Category.Size = new Size(75, 23);
+            Category.TabIndex = 8;
+            Category.Text = "Category:";
+            Category.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // ProductSearch
+            // 
+            ProductSearch.ForeColor = Color.FromArgb(30, 45, 70);
+            ProductSearch.Location = new Point(156, 27);
+            ProductSearch.MaxLength = 100;
+            ProductSearch.Name = "ProductSearch";
+            ProductSearch.PlaceholderText = "Enter product name...";
+            ProductSearch.Size = new Size(211, 23);
+            ProductSearch.TabIndex = 9;
+            // 
+            // Search
+            // 
+            Search.BackColor = Color.Transparent;
+            Search.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Search.Location = new Point(58, 27);
+            Search.Name = "Search";
+            Search.Size = new Size(120, 23);
+            Search.TabIndex = 10;
+            Search.Text = "Search Product:";
+            Search.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label2
+            // 
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(58, 71);
+            label2.Name = "label2";
+            label2.Size = new Size(120, 23);
+            label2.TabIndex = 14;
+            label2.Text = "Created by :";
+            label2.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // label3
+            // 
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(389, 71);
+            label3.Name = "label3";
+            label3.Size = new Size(75, 23);
+            label3.TabIndex = 12;
+            label3.Text = "Created at :";
+            label3.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.AllowUserToAddRows = false;
+            dataGridView1.AllowUserToDeleteRows = false;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.GridColor = Color.FromArgb(215, 226, 242);
+            dataGridView1.Location = new Point(0, 50);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.Size = new Size(988, 324);
+            dataGridView1.TabIndex = 5;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(panel3);
+            panel2.Controls.Add(dataGridView1);
+            panel2.Location = new Point(20, 275);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(988, 374);
+            panel2.TabIndex = 6;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.FromArgb(10, 39, 93);
+            panel3.Controls.Add(label6);
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(988, 50);
+            panel3.TabIndex = 6;
+            // 
+            // btnSearch
+            // 
+            btnSearch.BackColor = Color.FromArgb(10, 48, 104);
+            btnSearch.Cursor = Cursors.Hand;
+            btnSearch.FlatStyle = FlatStyle.Flat;
+            btnSearch.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSearch.ForeColor = Color.White;
+            btnSearch.Location = new Point(638, 66);
+            btnSearch.Name = "btnSearch";
+            btnSearch.Size = new Size(136, 30);
+            btnSearch.TabIndex = 16;
+            btnSearch.Text = "Search";
+            btnSearch.UseVisualStyleBackColor = false;
+            // 
+            // btnStockOutClear
+            // 
+            btnStockOutClear.BackColor = Color.FromArgb(10, 48, 104);
+            btnStockOutClear.Cursor = Cursors.Hand;
+            btnStockOutClear.FlatStyle = FlatStyle.Flat;
+            btnStockOutClear.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnStockOutClear.ForeColor = Color.White;
+            btnStockOutClear.Location = new Point(794, 66);
+            btnStockOutClear.Name = "btnStockOutClear";
+            btnStockOutClear.Size = new Size(136, 30);
+            btnStockOutClear.TabIndex = 15;
+            btnStockOutClear.Text = "Clear";
+            btnStockOutClear.UseVisualStyleBackColor = false;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(470, 71);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(156, 23);
+            textBox2.TabIndex = 17;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(139, 71);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(228, 23);
+            textBox1.TabIndex = 18;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Franklin Gothic Medium", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(12, 11);
+            label6.Name = "label6";
+            label6.Size = new Size(200, 26);
+            label6.TabIndex = 9;
+            label6.Text = "Transaction Ledger";
+            // 
             // StockHistoryControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 248, 253);
+            Controls.Add(panel2);
+            Controls.Add(panel1);
             Controls.Add(pnlPageHeader);
             Controls.Add(label1);
             Name = "StockHistoryControl";
             Size = new Size(1024, 681);
             pnlPageHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picPageIcon).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel2.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -114,5 +336,22 @@
         private PictureBox picPageIcon;
         private Label lblPageDescription;
         private Label StaffPageTitle;
+        private Panel panel1;
+        private ComboBox Movement;
+        private TextBox ProductSearch;
+        private Label MovementType;
+        private Label Search;
+        private ComboBox ProdCategory;
+        private Label Category;
+        private Label label2;
+        private Label label3;
+        private DataGridView dataGridView1;
+        private Panel panel2;
+        private Panel panel3;
+        private TextBox textBox2;
+        private Button btnSearch;
+        private Button btnStockOutClear;
+        private TextBox textBox1;
+        private Label label6;
     }
 }

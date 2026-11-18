@@ -29,41 +29,41 @@
         private void InitializeComponent()
         {
             pnlPageHeader = new Panel();
-            StaffPageTitle = new Label();
-            lblPageDescription = new Label();
             picPageIcon = new PictureBox();
+            lblPageDescription = new Label();
+            StaffPageTitle = new Label();
             TotAvailProd = new Panel();
-            LowStockProd = new Panel();
-            RecentTransaction = new Panel();
-            LblTotAvailProd = new Label();
             AvailStocks = new Label();
+            TotAvailProdHeader = new Panel();
+            LblTotAvailProd = new Label();
+            LowStockProd = new Panel();
+            LowStockProdHeader = new Panel();
             LSPLbl = new Label();
             LowStock = new Label();
-            TransactLbl = new Label();
+            RecentTransaction = new Panel();
             Transactions = new Label();
-            TotAvailProdHeader = new Panel();
-            LowStockProdHeader = new Panel();
+            TransactLbl = new Label();
             RecentTransactionHeader = new Panel();
             dataGridView1 = new DataGridView();
             panel1 = new Panel();
             panel2 = new Panel();
             label2 = new Label();
             pnlFilters = new Panel();
-            RefreshBtn = new Button();
             StockStats = new ComboBox();
             lblStockStatus = new Label();
             ProdCategory = new ComboBox();
             lblCategory = new Label();
-            Searchbtn = new Button();
             SearchProd = new TextBox();
             lblSearch = new Label();
+            RefreshBtn = new Button();
+            Searchbtn = new Button();
             pnlPageHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picPageIcon).BeginInit();
             TotAvailProd.SuspendLayout();
-            LowStockProd.SuspendLayout();
-            RecentTransaction.SuspendLayout();
             TotAvailProdHeader.SuspendLayout();
+            LowStockProd.SuspendLayout();
             LowStockProdHeader.SuspendLayout();
+            RecentTransaction.SuspendLayout();
             RecentTransactionHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
@@ -83,17 +83,15 @@
             pnlPageHeader.Size = new Size(988, 83);
             pnlPageHeader.TabIndex = 1;
             // 
-            // StaffPageTitle
+            // picPageIcon
             // 
-            StaffPageTitle.BackColor = Color.Transparent;
-            StaffPageTitle.Font = new Font("Franklin Gothic Medium", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            StaffPageTitle.ForeColor = Color.FromArgb(10, 39, 93);
-            StaffPageTitle.Location = new Point(88, 13);
-            StaffPageTitle.Name = "StaffPageTitle";
-            StaffPageTitle.Size = new Size(370, 32);
-            StaffPageTitle.TabIndex = 1;
-            StaffPageTitle.Text = "Staff Dashboard";
-            StaffPageTitle.TextAlign = ContentAlignment.MiddleLeft;
+            picPageIcon.BackColor = Color.Transparent;
+            picPageIcon.Location = new Point(10, 13);
+            picPageIcon.Name = "picPageIcon";
+            picPageIcon.Size = new Size(64, 50);
+            picPageIcon.SizeMode = PictureBoxSizeMode.Zoom;
+            picPageIcon.TabIndex = 2;
+            picPageIcon.TabStop = false;
             // 
             // lblPageDescription
             // 
@@ -107,15 +105,17 @@
             lblPageDescription.Text = "Monitor stock availability, track stock changes, and recent transactions";
             lblPageDescription.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // picPageIcon
+            // StaffPageTitle
             // 
-            picPageIcon.BackColor = Color.Transparent;
-            picPageIcon.Location = new Point(10, 13);
-            picPageIcon.Name = "picPageIcon";
-            picPageIcon.Size = new Size(64, 50);
-            picPageIcon.SizeMode = PictureBoxSizeMode.Zoom;
-            picPageIcon.TabIndex = 2;
-            picPageIcon.TabStop = false;
+            StaffPageTitle.BackColor = Color.Transparent;
+            StaffPageTitle.Font = new Font("Franklin Gothic Medium", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            StaffPageTitle.ForeColor = Color.FromArgb(10, 39, 93);
+            StaffPageTitle.Location = new Point(88, 13);
+            StaffPageTitle.Name = "StaffPageTitle";
+            StaffPageTitle.Size = new Size(370, 32);
+            StaffPageTitle.TabIndex = 1;
+            StaffPageTitle.Text = "Staff Dashboard";
+            StaffPageTitle.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // TotAvailProd
             // 
@@ -128,26 +128,24 @@
             TotAvailProd.Size = new Size(270, 97);
             TotAvailProd.TabIndex = 2;
             // 
-            // LowStockProd
+            // AvailStocks
             // 
-            LowStockProd.BackColor = Color.White;
-            LowStockProd.BorderStyle = BorderStyle.FixedSingle;
-            LowStockProd.Controls.Add(LowStockProdHeader);
-            LowStockProd.Controls.Add(LowStock);
-            LowStockProd.Location = new Point(382, 127);
-            LowStockProd.Name = "LowStockProd";
-            LowStockProd.Size = new Size(270, 97);
-            LowStockProd.TabIndex = 3;
+            AvailStocks.AutoSize = true;
+            AvailStocks.Font = new Font("Franklin Gothic Medium", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            AvailStocks.Location = new Point(102, 51);
+            AvailStocks.Name = "AvailStocks";
+            AvailStocks.Size = new Size(58, 30);
+            AvailStocks.TabIndex = 1;
+            AvailStocks.Text = "251";
             // 
-            // RecentTransaction
+            // TotAvailProdHeader
             // 
-            RecentTransaction.BackColor = Color.White;
-            RecentTransaction.BorderStyle = BorderStyle.FixedSingle;
-            RecentTransaction.Controls.Add(Transactions);
-            RecentTransaction.Location = new Point(738, 127);
-            RecentTransaction.Name = "RecentTransaction";
-            RecentTransaction.Size = new Size(270, 97);
-            RecentTransaction.TabIndex = 4;
+            TotAvailProdHeader.BackColor = Color.FromArgb(6, 38, 75);
+            TotAvailProdHeader.Controls.Add(LblTotAvailProd);
+            TotAvailProdHeader.Location = new Point(0, 0);
+            TotAvailProdHeader.Name = "TotAvailProdHeader";
+            TotAvailProdHeader.Size = new Size(270, 36);
+            TotAvailProdHeader.TabIndex = 5;
             // 
             // LblTotAvailProd
             // 
@@ -160,15 +158,25 @@
             LblTotAvailProd.TabIndex = 0;
             LblTotAvailProd.Text = "Total Available Products";
             // 
-            // AvailStocks
+            // LowStockProd
             // 
-            AvailStocks.AutoSize = true;
-            AvailStocks.Font = new Font("Franklin Gothic Medium", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            AvailStocks.Location = new Point(102, 51);
-            AvailStocks.Name = "AvailStocks";
-            AvailStocks.Size = new Size(58, 30);
-            AvailStocks.TabIndex = 1;
-            AvailStocks.Text = "251";
+            LowStockProd.BackColor = Color.White;
+            LowStockProd.BorderStyle = BorderStyle.FixedSingle;
+            LowStockProd.Controls.Add(LowStockProdHeader);
+            LowStockProd.Controls.Add(LowStock);
+            LowStockProd.Location = new Point(382, 127);
+            LowStockProd.Name = "LowStockProd";
+            LowStockProd.Size = new Size(270, 97);
+            LowStockProd.TabIndex = 3;
+            // 
+            // LowStockProdHeader
+            // 
+            LowStockProdHeader.BackColor = Color.FromArgb(6, 38, 75);
+            LowStockProdHeader.Controls.Add(LSPLbl);
+            LowStockProdHeader.Location = new Point(0, 0);
+            LowStockProdHeader.Name = "LowStockProdHeader";
+            LowStockProdHeader.Size = new Size(270, 36);
+            LowStockProdHeader.TabIndex = 6;
             // 
             // LSPLbl
             // 
@@ -191,16 +199,15 @@
             LowStock.TabIndex = 2;
             LowStock.Text = "18";
             // 
-            // TransactLbl
+            // RecentTransaction
             // 
-            TransactLbl.AutoSize = true;
-            TransactLbl.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            TransactLbl.ForeColor = Color.White;
-            TransactLbl.Location = new Point(54, 7);
-            TransactLbl.Name = "TransactLbl";
-            TransactLbl.Size = new Size(172, 21);
-            TransactLbl.TabIndex = 3;
-            TransactLbl.Text = "Today's Transactions";
+            RecentTransaction.BackColor = Color.White;
+            RecentTransaction.BorderStyle = BorderStyle.FixedSingle;
+            RecentTransaction.Controls.Add(Transactions);
+            RecentTransaction.Location = new Point(738, 127);
+            RecentTransaction.Name = "RecentTransaction";
+            RecentTransaction.Size = new Size(270, 97);
+            RecentTransaction.TabIndex = 4;
             // 
             // Transactions
             // 
@@ -212,23 +219,16 @@
             Transactions.TabIndex = 3;
             Transactions.Text = "18";
             // 
-            // TotAvailProdHeader
+            // TransactLbl
             // 
-            TotAvailProdHeader.BackColor = Color.FromArgb(6, 38, 75);
-            TotAvailProdHeader.Controls.Add(LblTotAvailProd);
-            TotAvailProdHeader.Location = new Point(0, 0);
-            TotAvailProdHeader.Name = "TotAvailProdHeader";
-            TotAvailProdHeader.Size = new Size(270, 36);
-            TotAvailProdHeader.TabIndex = 5;
-            // 
-            // LowStockProdHeader
-            // 
-            LowStockProdHeader.BackColor = Color.FromArgb(6, 38, 75);
-            LowStockProdHeader.Controls.Add(LSPLbl);
-            LowStockProdHeader.Location = new Point(0, 0);
-            LowStockProdHeader.Name = "LowStockProdHeader";
-            LowStockProdHeader.Size = new Size(270, 36);
-            LowStockProdHeader.TabIndex = 6;
+            TransactLbl.AutoSize = true;
+            TransactLbl.Font = new Font("Franklin Gothic Medium", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TransactLbl.ForeColor = Color.White;
+            TransactLbl.Location = new Point(54, 7);
+            TransactLbl.Name = "TransactLbl";
+            TransactLbl.Size = new Size(172, 21);
+            TransactLbl.TabIndex = 3;
+            TransactLbl.Text = "Today's Transactions";
             // 
             // RecentTransactionHeader
             // 
@@ -285,7 +285,7 @@
             // pnlFilters
             // 
             pnlFilters.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
-            pnlFilters.BackColor = Color.Transparent;
+            pnlFilters.BackColor = Color.White;
             pnlFilters.BorderStyle = BorderStyle.FixedSingle;
             pnlFilters.Controls.Add(StockStats);
             pnlFilters.Controls.Add(lblStockStatus);
@@ -299,20 +299,6 @@
             pnlFilters.Padding = new Padding(8, 5, 8, 5);
             pnlFilters.Size = new Size(988, 57);
             pnlFilters.TabIndex = 10;
-            // 
-            // RefreshBtn
-            // 
-            RefreshBtn.BackColor = Color.FromArgb(10, 48, 104);
-            RefreshBtn.Cursor = Cursors.Hand;
-            RefreshBtn.FlatStyle = FlatStyle.Flat;
-            RefreshBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            RefreshBtn.ForeColor = Color.White;
-            RefreshBtn.Location = new Point(858, 624);
-            RefreshBtn.Name = "RefreshBtn";
-            RefreshBtn.Size = new Size(150, 34);
-            RefreshBtn.TabIndex = 2;
-            RefreshBtn.Text = "Refresh";
-            RefreshBtn.UseVisualStyleBackColor = false;
             // 
             // StockStats
             // 
@@ -359,18 +345,6 @@
             lblCategory.Text = "Category:";
             lblCategory.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // Searchbtn
-            // 
-            Searchbtn.Cursor = Cursors.Hand;
-            Searchbtn.FlatStyle = FlatStyle.Flat;
-            Searchbtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Searchbtn.Location = new Point(704, 624);
-            Searchbtn.Name = "Searchbtn";
-            Searchbtn.Size = new Size(148, 34);
-            Searchbtn.TabIndex = 2;
-            Searchbtn.Text = "Search";
-            Searchbtn.UseVisualStyleBackColor = false;
-            // 
             // SearchProd
             // 
             SearchProd.ForeColor = Color.FromArgb(30, 45, 70);
@@ -391,6 +365,32 @@
             lblSearch.TabIndex = 2;
             lblSearch.Text = "Search Product:";
             lblSearch.TextAlign = ContentAlignment.MiddleLeft;
+            // 
+            // RefreshBtn
+            // 
+            RefreshBtn.BackColor = Color.FromArgb(10, 48, 104);
+            RefreshBtn.Cursor = Cursors.Hand;
+            RefreshBtn.FlatStyle = FlatStyle.Flat;
+            RefreshBtn.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            RefreshBtn.ForeColor = Color.White;
+            RefreshBtn.Location = new Point(858, 624);
+            RefreshBtn.Name = "RefreshBtn";
+            RefreshBtn.Size = new Size(150, 34);
+            RefreshBtn.TabIndex = 2;
+            RefreshBtn.Text = "Refresh";
+            RefreshBtn.UseVisualStyleBackColor = false;
+            // 
+            // Searchbtn
+            // 
+            Searchbtn.Cursor = Cursors.Hand;
+            Searchbtn.FlatStyle = FlatStyle.Flat;
+            Searchbtn.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Searchbtn.Location = new Point(704, 624);
+            Searchbtn.Name = "Searchbtn";
+            Searchbtn.Size = new Size(148, 34);
+            Searchbtn.TabIndex = 2;
+            Searchbtn.Text = "Search";
+            Searchbtn.UseVisualStyleBackColor = false;
             // 
             // DashboardControl
             // 
@@ -413,14 +413,14 @@
             ((System.ComponentModel.ISupportInitialize)picPageIcon).EndInit();
             TotAvailProd.ResumeLayout(false);
             TotAvailProd.PerformLayout();
-            LowStockProd.ResumeLayout(false);
-            LowStockProd.PerformLayout();
-            RecentTransaction.ResumeLayout(false);
-            RecentTransaction.PerformLayout();
             TotAvailProdHeader.ResumeLayout(false);
             TotAvailProdHeader.PerformLayout();
+            LowStockProd.ResumeLayout(false);
+            LowStockProd.PerformLayout();
             LowStockProdHeader.ResumeLayout(false);
             LowStockProdHeader.PerformLayout();
+            RecentTransaction.ResumeLayout(false);
+            RecentTransaction.PerformLayout();
             RecentTransactionHeader.ResumeLayout(false);
             RecentTransactionHeader.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
