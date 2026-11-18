@@ -26,8 +26,7 @@
         /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             pnlPageHeader = new Panel();
             picPageIcon = new PictureBox();
             lblPageDescription = new Label();
@@ -35,8 +34,9 @@
             panel4 = new Panel();
             label6 = new Label();
             panel2 = new Panel();
-            StockOutLog = new DataGridView();
+            dgvStockOutLog = new DataGridView();
             panel1 = new Panel();
+            ProdAvail = new Label();
             label7 = new Label();
             btnSaveStockOut = new Button();
             btnStockOutClear = new Button();
@@ -52,12 +52,11 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            ProdAvail = new Label();
             pnlPageHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picPageIcon).BeginInit();
             panel4.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)StockOutLog).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvStockOutLog).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)NumStockOutQuantity).BeginInit();
             panel3.SuspendLayout();
@@ -133,24 +132,24 @@
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(StockOutLog);
+            panel2.Controls.Add(dgvStockOutLog);
             panel2.Location = new Point(408, 138);
             panel2.Name = "panel2";
             panel2.Size = new Size(586, 495);
             panel2.TabIndex = 8;
             // 
-            // StockOutLog
+            // dgvStockOutLog
             // 
-            StockOutLog.AllowUserToAddRows = false;
-            StockOutLog.AllowUserToDeleteRows = false;
-            StockOutLog.BackgroundColor = Color.White;
-            StockOutLog.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            StockOutLog.GridColor = Color.FromArgb(215, 226, 242);
-            StockOutLog.Location = new Point(-1, 54);
-            StockOutLog.Name = "StockOutLog";
-            StockOutLog.ReadOnly = true;
-            StockOutLog.Size = new Size(586, 439);
-            StockOutLog.TabIndex = 0;
+            dgvStockOutLog.AllowUserToAddRows = false;
+            dgvStockOutLog.AllowUserToDeleteRows = false;
+            dgvStockOutLog.BackgroundColor = Color.White;
+            dgvStockOutLog.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvStockOutLog.GridColor = Color.FromArgb(215, 226, 242);
+            dgvStockOutLog.Location = new Point(-1, 54);
+            dgvStockOutLog.Name = "dgvStockOutLog";
+            dgvStockOutLog.ReadOnly = true;
+            dgvStockOutLog.Size = new Size(586, 439);
+            dgvStockOutLog.TabIndex = 0;
             // 
             // panel1
             // 
@@ -174,6 +173,17 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(353, 495);
             panel1.TabIndex = 7;
+            // 
+            // ProdAvail
+            // 
+            ProdAvail.AutoSize = true;
+            ProdAvail.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ProdAvail.ForeColor = Color.FromArgb(255, 192, 128);
+            ProdAvail.Location = new Point(198, 117);
+            ProdAvail.Name = "ProdAvail";
+            ProdAvail.Size = new Size(23, 16);
+            ProdAvail.TabIndex = 14;
+            ProdAvail.Text = "18";
             // 
             // label7
             // 
@@ -199,6 +209,7 @@
             btnSaveStockOut.TabIndex = 12;
             btnSaveStockOut.Text = "Save Stock Out";
             btnSaveStockOut.UseVisualStyleBackColor = false;
+            btnSaveStockOut.Click += btnSaveStockOut_Click;
             // 
             // btnStockOutClear
             // 
@@ -213,6 +224,7 @@
             btnStockOutClear.TabIndex = 11;
             btnStockOutClear.Text = "Clear";
             btnStockOutClear.UseVisualStyleBackColor = false;
+            btnStockOutClear.Click += btnStockOutClear_Click;
             // 
             // NumStockOutQuantity
             // 
@@ -318,17 +330,6 @@
             label1.TabIndex = 0;
             label1.Text = "Product :";
             // 
-            // ProdAvail
-            // 
-            ProdAvail.AutoSize = true;
-            ProdAvail.Font = new Font("Franklin Gothic Medium", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            ProdAvail.ForeColor = Color.FromArgb(255, 192, 128);
-            ProdAvail.Location = new Point(198, 117);
-            ProdAvail.Name = "ProdAvail";
-            ProdAvail.Size = new Size(23, 16);
-            ProdAvail.TabIndex = 14;
-            ProdAvail.Text = "18";
-            // 
             // StockOutControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -345,7 +346,7 @@
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)StockOutLog).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvStockOutLog).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)NumStockOutQuantity).EndInit();
@@ -363,7 +364,7 @@
         private Panel panel4;
         private Label label6;
         private Panel panel2;
-        private DataGridView StockOutLog;
+        private DataGridView dgvStockOutLog;
         private Panel panel1;
         private Button btnSaveStockOut;
         private Button btnStockOutClear;
