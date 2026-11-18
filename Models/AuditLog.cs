@@ -27,5 +27,19 @@ namespace InventorySystem.Models {
             NewData = newData;
             LoggedAt = loggedAt;
         }
+
+        public static AuditLog FromReader(MySqlDataReader reader)
+        {
+            return new AuditLog(
+                reader.GetInt64("AuditId"),
+                reader.IsDBNull(reader.GetOrdinal("ActorUserId")) ? null : reader.GetInt32("ActorUserId"),
+                reader.GetString("ActionType"),
+                reader.GetString("EntityName"),
+                reader.IsDBNull(reader.GetOrdinal("EntityId")) ? null : reader.GetInt64("EntityId"),
+                reader.IsDBNull(reader.GetOrdinal("OldData")) ? null : reader.GetString("OldData"),
+                reader.IsDBNull(reader.GetOrdinal("NewData")) ? null : reader.GetString("NewData"),
+                reader.GetDateTime("LoggedAt")
+            );
+        }
     }
 }

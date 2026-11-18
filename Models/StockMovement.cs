@@ -30,5 +30,20 @@ namespace InventorySystem.Models {
             CreatedBy = createdBy;
             CreatedAt = createdAt;
         }
+
+        public static StockMovement FromReader(MySqlDataReader reader)
+        {
+            return new StockMovement(
+                reader.GetInt64("MovementId"),
+                reader.GetInt64("ProductId"),
+                (MovementType) Enum.Parse(typeof(MovementType), reader.GetString("MovementType")),
+                reader.GetDecimal("Quantity"),
+                reader.IsDBNull(reader.GetOrdinal("StorageLocation")) ? null : reader.GetString("StorageLocation"),
+                reader.IsDBNull(reader.GetOrdinal("ReferenceNo")) ? null : reader.GetString("ReferenceNo"),
+                reader.IsDBNull(reader.GetOrdinal("Remarks")) ? null : reader.GetString("Remarks"),
+                reader.IsDBNull(reader.GetOrdinal("CreatedBy")) ? null : reader.GetInt32("CreatedBy"),
+                reader.GetDateTime("CreatedAt")
+            );
+        }
     }
 }

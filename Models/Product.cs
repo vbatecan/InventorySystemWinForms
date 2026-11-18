@@ -1,4 +1,4 @@
-﻿using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient;
 
 namespace InventorySystem.Models {
     public class Product {
@@ -37,6 +37,25 @@ namespace InventorySystem.Models {
             IsActive = isActive;
             CreatedAt = createdAt;
             UpdatedAt = updatedAt;
+        }
+
+        public static Product FromReader(MySqlDataReader reader)
+        {
+            return new Product(
+                reader.GetInt64("ProductId"),
+                reader.GetString("Sku"),
+                reader.GetString("ProductName"),
+                reader.IsDBNull(reader.GetOrdinal("Description")) ? null : reader.GetString("Description"),
+                reader.GetInt32("CategoryId"),
+                reader.GetInt16("UnitId"),
+                reader.IsDBNull(reader.GetOrdinal("SupplierId")) ? null : reader.GetInt32("SupplierId"),
+                reader.GetDecimal("CostPrice"),
+                reader.GetDecimal("SellingPrice"),
+                reader.GetDecimal("ReorderLevel"),
+                reader.GetBoolean("IsActive"),
+                reader.GetDateTime("CreatedAt"),
+                reader.GetDateTime("UpdatedAt")
+            );
         }
     }
 }

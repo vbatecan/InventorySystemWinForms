@@ -1,0 +1,14 @@
+namespace InventorySystem.Exceptions {
+    public class OperationFailedException : Exception {
+
+        public OperationFailedException()
+        {
+
+        }
+
+        public OperationFailedException(string message) : base(message)
+        {
+
+        }
+    }
+}

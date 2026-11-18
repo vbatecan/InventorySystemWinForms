@@ -8,11 +8,17 @@ using System.Windows.Forms;
 
 namespace InventorySystem.Forms.Staff
 {
-    public partial class StockInControl : UserControl
-    {
-        public StockInControl()
-        {
+    public partial class StockInControl : UserControl {
+        public StockInControl() {
             InitializeComponent();
+        }
+
+        private void btnSaveStock_Click(object sender, EventArgs e) {
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e) {
+
         }
     }
 }

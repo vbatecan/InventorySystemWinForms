@@ -26,8 +26,8 @@
         /// Required method for Designer support - do not modify 
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
+            components = new System.ComponentModel.Container();
             pnlPageHeader = new Panel();
             picPageIcon = new PictureBox();
             lblPageDescription = new Label();
@@ -48,17 +48,19 @@
             label2 = new Label();
             label1 = new Label();
             panel2 = new Panel();
-            StockInLog = new DataGridView();
+            dgvStockInLog = new DataGridView();
             panel4 = new Panel();
             label6 = new Label();
+            err = new ErrorProvider(components);
             pnlPageHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picPageIcon).BeginInit();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)NumQuantity).BeginInit();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)StockInLog).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvStockInLog).BeginInit();
             panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)err).BeginInit();
             SuspendLayout();
             // 
             // pnlPageHeader
@@ -141,6 +143,7 @@
             btnSaveStock.TabIndex = 12;
             btnSaveStock.Text = "Save Stock In";
             btnSaveStock.UseVisualStyleBackColor = false;
+            btnSaveStock.Click += btnSaveStock_Click;
             // 
             // btnClear
             // 
@@ -155,6 +158,7 @@
             btnClear.TabIndex = 11;
             btnClear.Text = "Clear";
             btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
             // 
             // NumQuantity
             // 
@@ -264,24 +268,24 @@
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(StockInLog);
+            panel2.Controls.Add(dgvStockInLog);
             panel2.Location = new Point(408, 138);
             panel2.Name = "panel2";
             panel2.Size = new Size(586, 495);
             panel2.TabIndex = 4;
             // 
-            // StockInLog
+            // dgvStockInLog
             // 
-            StockInLog.AllowUserToAddRows = false;
-            StockInLog.AllowUserToDeleteRows = false;
-            StockInLog.BackgroundColor = Color.White;
-            StockInLog.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            StockInLog.GridColor = Color.FromArgb(215, 226, 242);
-            StockInLog.Location = new Point(-1, 54);
-            StockInLog.Name = "StockInLog";
-            StockInLog.ReadOnly = true;
-            StockInLog.Size = new Size(586, 439);
-            StockInLog.TabIndex = 0;
+            dgvStockInLog.AllowUserToAddRows = false;
+            dgvStockInLog.AllowUserToDeleteRows = false;
+            dgvStockInLog.BackgroundColor = Color.White;
+            dgvStockInLog.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvStockInLog.GridColor = Color.FromArgb(215, 226, 242);
+            dgvStockInLog.Location = new Point(-1, 54);
+            dgvStockInLog.Name = "dgvStockInLog";
+            dgvStockInLog.ReadOnly = true;
+            dgvStockInLog.Size = new Size(586, 439);
+            dgvStockInLog.TabIndex = 0;
             // 
             // panel4
             // 
@@ -304,6 +308,10 @@
             label6.TabIndex = 8;
             label6.Text = "Stock In Records";
             // 
+            // err
+            // 
+            err.ContainerControl = this;
+            // 
             // StockInControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -323,9 +331,10 @@
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
             panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)StockInLog).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvStockInLog).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)err).EndInit();
             ResumeLayout(false);
         }
 
@@ -351,8 +360,9 @@
         private TextBox txtLocation;
         private TextBox txtRefNo;
         private RichTextBox rtxtRemarks;
-        private DataGridView StockInLog;
+        private DataGridView dgvStockInLog;
         private Button btnSaveStock;
         private Button btnClear;
+        private ErrorProvider err;
     }
 }

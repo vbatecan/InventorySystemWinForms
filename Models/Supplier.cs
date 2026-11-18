@@ -25,5 +25,18 @@ namespace InventorySystem.Models {
             Address = address;
             IsActive = isActive;
         }
+
+        public static Supplier FromReader(MySqlDataReader reader)
+        {
+            return new Supplier(
+                reader.GetInt32("SupplierId"),
+                reader.GetString("SupplierName"),
+                reader.IsDBNull(reader.GetOrdinal("ContactPerson")) ? null : reader.GetString("ContactPerson"),
+                reader.IsDBNull(reader.GetOrdinal("Phone")) ? null : reader.GetString("Phone"),
+                reader.IsDBNull(reader.GetOrdinal("Email")) ? null : reader.GetString("Email"),
+                reader.IsDBNull(reader.GetOrdinal("Address")) ? null : reader.GetString("Address"),
+                reader.GetBoolean("IsActive")
+            );
+        }
     }
 }
