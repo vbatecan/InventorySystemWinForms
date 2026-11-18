@@ -2,32 +2,31 @@ using MySql.Data.MySqlClient;
 
 namespace InventorySystem.Models {
     public class Category {
-        private int CategoryId;
-        private string Name = string.Empty;
-        private string Description = string.Empty;
-        private bool IsActive = true;
+        public int CategoryId;
+        public string CategoryName = string.Empty;
+        public string? Description;
+        public bool IsActive;
 
         public Category()
         {
 
         }
 
-        public Category(int categoryId, string name, string description, bool isActive, DateTime createdAt)
+        public Category(int categoryId, string categoryName, string? description, bool isActive)
         {
             CategoryId = categoryId;
-            Name = name;
+            CategoryName = categoryName;
             Description = description;
             IsActive = isActive;
         }
 
-        public Category FromMySqlReader(MySqlDataReader reader)
+        public static Category FromReader(MySqlDataReader reader)
         {
             return new Category(
                 reader.GetInt32("CategoryId"),
-                reader.GetString("Name"),
-                reader.GetString("Description"),
-                reader.GetBoolean("IsActive"),
-                reader.GetDateTime("CreatedAt")
+                reader.GetString("CategoryName"),
+                reader.IsDBNull(reader.GetOrdinal("Description")) ? null : reader.GetString("Description"),
+                reader.GetBoolean("IsActive")
             );
         }
     }
