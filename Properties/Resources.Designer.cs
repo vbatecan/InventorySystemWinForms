@@ -79,5 +79,40 @@ namespace InventorySystem.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+
+        internal static System.Drawing.Bitmap d0923d12_291a_4add_8757_401a699f535a {
+            get {
+                object obj = ResourceManager.GetObject("d0923d12-291a-4add-8757-401a699f535a", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        internal static System.Drawing.Bitmap O3L53QbMUaqEe6s3iy5BuqEy1L46DytZKtucqEbKXfwEVZX0QPqaW0y7wrpiMMGUbflrOYDEV8KS_QtWRByOY_Wpyhii4WTbPhg_z1a79WqUIaUlbvPCKZDjRwqiE236hvtrNhPEZ0ifvhkQZd9W5sVcMhRLwGJhW0qbEbIJoonJrIS_b5WC0ZFF0cTclPw6 {
+            get {
+                object obj = ResourceManager.GetObject("O3L53QbMUaqEe6s3iy5BuqEy1L46DytZKtucqEbKXfwEVZX0QPqaW0y7wrpiMMGUbflrOYDEV8KS_QtWRByOY-Wpyhii4WTbPhg-z1a79WqUIaUlbvPCKZDjRwqiE236hvtrNhPEZ0ifvhkQZd9W5sVcMhRLwGJhW0qbEbIJoonJrIS-b5WC0ZFF0cTclPw6", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        internal static System.Drawing.Bitmap sAMclt4v2zviK9CBJ9yP3o6XTb7pi2VIP_BehaEejKQYhgeVp4lWjNZ1HEp8hUYeVgMluK2n3_JGzwKizwm4XFt2EYbGPkdGDThk0CMgsiw0ymIgrs_oj5AwLEEXwJ32mm5QGVLGRtN4EShxQXAo4EzhhmG0loL2110fBf03xkKdbebDlLRvebeYOyZCbfXl {
+            get {
+                object obj = ResourceManager.GetObject("sAMclt4v2zviK9CBJ9yP3o6XTb7pi2VIP_BehaEejKQYhgeVp4lWjNZ1HEp8hUYeVgMluK2n3_JGzwKizwm4XFt2EYbGPkdGDThk0CMgsiw0ymIgrs-oj5AwLEEXwJ32mm5QGVLGRtN4EShxQXAo4EzhhmG0loL2110fBf03xkKdbebDlLRvebeYOyZCbfXl", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        internal static System.Drawing.Bitmap _08zsf0_j21mhTSL6wjmBEZyqmaOh0JYcRIrbfiAM854kwCeEZIMyyLApI_Kav4QIiwOR4yyrSKfpUVKB6dc2_xaeRG1zijN_4fCFf6z07Dann4MU3sXAJNHzwes9Xab_P5XhxzTgFZLpeQEIfmNlIUbEcGgIt4b_1ec2Gv1oe85vIEkI09NCOifcFQ5oBUwU {
+            get {
+                object obj = ResourceManager.GetObject("08zsf0_j21mhTSL6wjmBEZyqmaOh0JYcRIrbfiAM854kwCeEZIMyyLApI_Kav4QIiwOR4yyrSKfpUVKB6dc2-xaeRG1zijN_4fCFf6z07Dann4MU3sXAJNHzwes9Xab_P5XhxzTgFZLpeQEIfmNlIUbEcGgIt4b-1ec2Gv1oe85vIEkI09NCOifcFQ5oBUwU", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+
+        internal static System.Drawing.Bitmap U4PBa6Apck09PUjDqghEfT4aBc2RHXycuscwvxPnjRa2eggbsXFL1ql8zc43coOOXRO__dx8SwOgexxviwPcqXx63qx9Du5UlIf6uHE9SSqFD81JWuAbkflBipRn8As2lraCYImn5__WF_W7e5teI_9iQKcQ9f48IdQ6rUL5mjz7pvzJh9lvlNYjs3oYx5pj {
+            get {
+                object obj = ResourceManager.GetObject("U4PBa6Apck09PUjDqghEfT4aBc2RHXycuscwvxPnjRa2eggbsXFL1ql8zc43coOOXRO_-dx8SwOgexxviwPcqXx63qx9Du5UlIf6uHE9SSqFD81JWuAbkflBipRn8As2lraCYImn5-_WF-W7e5teI_9iQKcQ9f48IdQ6rUL5mjz7pvzJh9lvlNYjs3oYx5pj", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
