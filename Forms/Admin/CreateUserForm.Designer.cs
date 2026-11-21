@@ -1,4 +1,4 @@
-﻿namespace InventorySystem.Forms.Superadmin {
+namespace InventorySystem.Forms.Admin {
     partial class CreateUserForm {
         /// <summary>
         /// Required designer variable.
