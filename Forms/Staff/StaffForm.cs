@@ -25,11 +25,11 @@ namespace InventorySystem.Forms.Manager
 
         private void StaffForm_Load(object sender, EventArgs e)
         {
-            LoadUserControl(new DashboardControl());
+            LoadUserControl(new StaffDashboardControl());
         }
         private void btnDashboard_Click(object sender, EventArgs e)
         {
-            LoadUserControl(new DashboardControl());
+            LoadUserControl(new StaffDashboardControl());
         }
 
         private void btnStockIn_Click(object sender, EventArgs e)
