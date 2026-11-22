@@ -35,9 +35,9 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "dashboard";
-            Size = new Size(1024, 681);
+            Size = new Size(984, 636);
             ResumeLayout(false);
         }
 
