@@ -702,6 +702,7 @@
             chartStockTrend.Size = new Size(873, 213);
             chartStockTrend.TabIndex = 3;
             chartStockTrend.Text = "chart1";
+            chartStockTrend.Click += chartStockTrend_Click;
             // 
             // pictureBox5
             // 
