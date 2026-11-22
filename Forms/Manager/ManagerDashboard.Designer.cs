@@ -33,71 +33,71 @@ namespace InventorySystem.Forms.Manager
             picTitle = new PictureBox();
             panel1 = new Panel();
             panel2 = new Panel();
-            panel3 = new Panel();
-            panel4 = new Panel();
-            panel5 = new Panel();
-            picProducts = new PictureBox();
-            picStock = new PictureBox();
-            picLowStock = new PictureBox();
-            picMovements = new PictureBox();
-            lblTotalProducts = new Label();
-            lblTotalStock = new Label();
-            lblLowStock = new Label();
-            lblTotalMovement = new Label();
             lblNumProduct = new Label();
+            lblTotalProducts = new Label();
+            picProducts = new PictureBox();
+            panel3 = new Panel();
             lblNumStocks = new Label();
+            lblTotalStock = new Label();
+            picStock = new PictureBox();
+            panel4 = new Panel();
             lblNumLowStock = new Label();
+            lblLowStock = new Label();
+            picLowStock = new PictureBox();
+            panel5 = new Panel();
             lblNumMovement = new Label();
+            lblTotalMovement = new Label();
+            picMovements = new PictureBox();
             pnlInventoryOverview = new Panel();
-            lblInventoryOverview = new Label();
             pnlInventoryOverviewSub = new Panel();
-            pnlQuickActions = new Panel();
-            pnlQuickActionsSub = new Panel();
             picInventory = new PictureBox();
-            lblQuickActions = new Label();
-            picActions = new PictureBox();
-            btnAddProduct = new Button();
-            btnEditProduct = new Button();
-            btnSearchInventory = new Button();
-            btnViewReports = new Button();
-            picAdd = new PictureBox();
-            picSearch = new PictureBox();
-            picEdit = new PictureBox();
+            lblInventoryOverview = new Label();
+            pnlQuickActions = new Panel();
             picView = new PictureBox();
+            picEdit = new PictureBox();
+            picSearch = new PictureBox();
+            picAdd = new PictureBox();
+            btnViewReports = new Button();
+            btnSearchInventory = new Button();
+            btnEditProduct = new Button();
+            btnAddProduct = new Button();
+            pnlQuickActionsSub = new Panel();
+            picActions = new PictureBox();
+            lblQuickActions = new Label();
             pnlRecentActivity = new Panel();
+            panel6 = new Panel();
+            btnViewAll = new Button();
+            pictureBox1 = new PictureBox();
             lblbRecentActivity = new Label();
             dgvRecentActivity = new DataGridView();
-            panel6 = new Panel();
-            pictureBox1 = new PictureBox();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
-            btnViewAll = new Button();
             ((System.ComponentModel.ISupportInitialize)picTitle).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
-            panel3.SuspendLayout();
-            panel4.SuspendLayout();
-            panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picProducts).BeginInit();
+            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picStock).BeginInit();
+            panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picLowStock).BeginInit();
+            panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picMovements).BeginInit();
             pnlInventoryOverview.SuspendLayout();
             pnlInventoryOverviewSub.SuspendLayout();
-            pnlQuickActions.SuspendLayout();
-            pnlQuickActionsSub.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picInventory).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picActions).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picAdd).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picSearch).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)picEdit).BeginInit();
+            pnlQuickActions.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picEdit).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picSearch).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)picAdd).BeginInit();
+            pnlQuickActionsSub.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picActions).BeginInit();
             pnlRecentActivity.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvRecentActivity).BeginInit();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvRecentActivity).BeginInit();
             SuspendLayout();
             // 
             // lblTitle
@@ -105,7 +105,7 @@ namespace InventorySystem.Forms.Manager
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.FromArgb(10, 39, 93);
-            lblTitle.Location = new Point(64, 10);
+            lblTitle.Location = new Point(64, 9);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(279, 37);
             lblTitle.TabIndex = 0;
@@ -115,7 +115,7 @@ namespace InventorySystem.Forms.Manager
             // 
             lblSubTitle.AutoSize = true;
             lblSubTitle.ForeColor = Color.FromArgb(20, 45, 85);
-            lblSubTitle.Location = new Point(69, 47);
+            lblSubTitle.Location = new Point(69, 45);
             lblSubTitle.Name = "lblSubTitle";
             lblSubTitle.Size = new Size(305, 15);
             lblSubTitle.TabIndex = 1;
@@ -123,7 +123,7 @@ namespace InventorySystem.Forms.Manager
             // 
             // picTitle
             // 
-            picTitle.Location = new Point(10, 13);
+            picTitle.Location = new Point(11, 13);
             picTitle.Name = "picTitle";
             picTitle.Size = new Size(48, 52);
             picTitle.TabIndex = 2;
@@ -153,6 +153,36 @@ namespace InventorySystem.Forms.Manager
             panel2.Size = new Size(237, 95);
             panel2.TabIndex = 4;
             // 
+            // lblNumProduct
+            // 
+            lblNumProduct.AutoSize = true;
+            lblNumProduct.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
+            lblNumProduct.ForeColor = Color.Black;
+            lblNumProduct.Location = new Point(73, 38);
+            lblNumProduct.Name = "lblNumProduct";
+            lblNumProduct.Size = new Size(65, 37);
+            lblNumProduct.TabIndex = 2;
+            lblNumProduct.Text = "250";
+            // 
+            // lblTotalProducts
+            // 
+            lblTotalProducts.AutoSize = true;
+            lblTotalProducts.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblTotalProducts.ForeColor = Color.Black;
+            lblTotalProducts.Location = new Point(76, 19);
+            lblTotalProducts.Name = "lblTotalProducts";
+            lblTotalProducts.Size = new Size(123, 21);
+            lblTotalProducts.TabIndex = 1;
+            lblTotalProducts.Text = "Total Products ";
+            // 
+            // picProducts
+            // 
+            picProducts.Location = new Point(11, 20);
+            picProducts.Name = "picProducts";
+            picProducts.Size = new Size(50, 50);
+            picProducts.TabIndex = 0;
+            picProducts.TabStop = false;
+            // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(220, 233, 252);
@@ -164,6 +194,36 @@ namespace InventorySystem.Forms.Manager
             panel3.Name = "panel3";
             panel3.Size = new Size(237, 95);
             panel3.TabIndex = 5;
+            // 
+            // lblNumStocks
+            // 
+            lblNumStocks.AutoSize = true;
+            lblNumStocks.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
+            lblNumStocks.ForeColor = Color.Black;
+            lblNumStocks.Location = new Point(75, 38);
+            lblNumStocks.Name = "lblNumStocks";
+            lblNumStocks.Size = new Size(65, 37);
+            lblNumStocks.TabIndex = 2;
+            lblNumStocks.Text = "450";
+            // 
+            // lblTotalStock
+            // 
+            lblTotalStock.AutoSize = true;
+            lblTotalStock.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblTotalStock.ForeColor = Color.Black;
+            lblTotalStock.Location = new Point(75, 18);
+            lblTotalStock.Name = "lblTotalStock";
+            lblTotalStock.Size = new Size(94, 21);
+            lblTotalStock.TabIndex = 1;
+            lblTotalStock.Text = "Total Stock";
+            // 
+            // picStock
+            // 
+            picStock.Location = new Point(12, 20);
+            picStock.Name = "picStock";
+            picStock.Size = new Size(50, 50);
+            picStock.TabIndex = 0;
+            picStock.TabStop = false;
             // 
             // panel4
             // 
@@ -177,71 +237,16 @@ namespace InventorySystem.Forms.Manager
             panel4.Size = new Size(237, 95);
             panel4.TabIndex = 6;
             // 
-            // panel5
+            // lblNumLowStock
             // 
-            panel5.BackColor = Color.FromArgb(220, 233, 252);
-            panel5.BorderStyle = BorderStyle.FixedSingle;
-            panel5.Controls.Add(lblNumMovement);
-            panel5.Controls.Add(lblTotalMovement);
-            panel5.Controls.Add(picMovements);
-            panel5.Location = new Point(738, 93);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(237, 95);
-            panel5.TabIndex = 7;
-            // 
-            // picProducts
-            // 
-            picProducts.Location = new Point(11, 20);
-            picProducts.Name = "picProducts";
-            picProducts.Size = new Size(50, 50);
-            picProducts.TabIndex = 0;
-            picProducts.TabStop = false;
-            // 
-            // picStock
-            // 
-            picStock.Location = new Point(12, 20);
-            picStock.Name = "picStock";
-            picStock.Size = new Size(50, 50);
-            picStock.TabIndex = 0;
-            picStock.TabStop = false;
-            // 
-            // picLowStock
-            // 
-            picLowStock.Location = new Point(12, 20);
-            picLowStock.Name = "picLowStock";
-            picLowStock.Size = new Size(50, 50);
-            picLowStock.TabIndex = 0;
-            picLowStock.TabStop = false;
-            // 
-            // picMovements
-            // 
-            picMovements.Location = new Point(11, 20);
-            picMovements.Name = "picMovements";
-            picMovements.Size = new Size(50, 50);
-            picMovements.TabIndex = 0;
-            picMovements.TabStop = false;
-            // 
-            // lblTotalProducts
-            // 
-            lblTotalProducts.AutoSize = true;
-            lblTotalProducts.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblTotalProducts.ForeColor = Color.Black;
-            lblTotalProducts.Location = new Point(76, 19);
-            lblTotalProducts.Name = "lblTotalProducts";
-            lblTotalProducts.Size = new Size(123, 21);
-            lblTotalProducts.TabIndex = 1;
-            lblTotalProducts.Text = "Total Products ";
-            // 
-            // lblTotalStock
-            // 
-            lblTotalStock.AutoSize = true;
-            lblTotalStock.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblTotalStock.ForeColor = Color.Black;
-            lblTotalStock.Location = new Point(75, 18);
-            lblTotalStock.Name = "lblTotalStock";
-            lblTotalStock.Size = new Size(94, 21);
-            lblTotalStock.TabIndex = 1;
-            lblTotalStock.Text = "Total Stock";
+            lblNumLowStock.AutoSize = true;
+            lblNumLowStock.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
+            lblNumLowStock.ForeColor = Color.Black;
+            lblNumLowStock.Location = new Point(77, 37);
+            lblNumLowStock.Name = "lblNumLowStock";
+            lblNumLowStock.Size = new Size(49, 37);
+            lblNumLowStock.TabIndex = 2;
+            lblNumLowStock.Text = "28";
             // 
             // lblLowStock
             // 
@@ -254,49 +259,25 @@ namespace InventorySystem.Forms.Manager
             lblLowStock.TabIndex = 1;
             lblLowStock.Text = "Low Stock Items";
             // 
-            // lblTotalMovement
+            // picLowStock
             // 
-            lblTotalMovement.AutoSize = true;
-            lblTotalMovement.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            lblTotalMovement.ForeColor = Color.Black;
-            lblTotalMovement.Location = new Point(79, 18);
-            lblTotalMovement.Name = "lblTotalMovement";
-            lblTotalMovement.Size = new Size(135, 21);
-            lblTotalMovement.TabIndex = 1;
-            lblTotalMovement.Text = "Total Movement";
+            picLowStock.Location = new Point(12, 20);
+            picLowStock.Name = "picLowStock";
+            picLowStock.Size = new Size(50, 50);
+            picLowStock.TabIndex = 0;
+            picLowStock.TabStop = false;
             // 
-            // lblNumProduct
+            // panel5
             // 
-            lblNumProduct.AutoSize = true;
-            lblNumProduct.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
-            lblNumProduct.ForeColor = Color.Black;
-            lblNumProduct.Location = new Point(73, 38);
-            lblNumProduct.Name = "lblNumProduct";
-            lblNumProduct.Size = new Size(65, 37);
-            lblNumProduct.TabIndex = 2;
-            lblNumProduct.Text = "250";
-            // 
-            // lblNumStocks
-            // 
-            lblNumStocks.AutoSize = true;
-            lblNumStocks.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
-            lblNumStocks.ForeColor = Color.Black;
-            lblNumStocks.Location = new Point(75, 38);
-            lblNumStocks.Name = "lblNumStocks";
-            lblNumStocks.Size = new Size(65, 37);
-            lblNumStocks.TabIndex = 2;
-            lblNumStocks.Text = "450";
-            // 
-            // lblNumLowStock
-            // 
-            lblNumLowStock.AutoSize = true;
-            lblNumLowStock.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold);
-            lblNumLowStock.ForeColor = Color.Black;
-            lblNumLowStock.Location = new Point(77, 37);
-            lblNumLowStock.Name = "lblNumLowStock";
-            lblNumLowStock.Size = new Size(49, 37);
-            lblNumLowStock.TabIndex = 2;
-            lblNumLowStock.Text = "28";
+            panel5.BackColor = Color.FromArgb(220, 233, 252);
+            panel5.BorderStyle = BorderStyle.FixedSingle;
+            panel5.Controls.Add(lblNumMovement);
+            panel5.Controls.Add(lblTotalMovement);
+            panel5.Controls.Add(picMovements);
+            panel5.Location = new Point(738, 93);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(237, 95);
+            panel5.TabIndex = 7;
             // 
             // lblNumMovement
             // 
@@ -309,6 +290,25 @@ namespace InventorySystem.Forms.Manager
             lblNumMovement.TabIndex = 2;
             lblNumMovement.Text = "700";
             // 
+            // lblTotalMovement
+            // 
+            lblTotalMovement.AutoSize = true;
+            lblTotalMovement.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblTotalMovement.ForeColor = Color.Black;
+            lblTotalMovement.Location = new Point(79, 18);
+            lblTotalMovement.Name = "lblTotalMovement";
+            lblTotalMovement.Size = new Size(135, 21);
+            lblTotalMovement.TabIndex = 1;
+            lblTotalMovement.Text = "Total Movement";
+            // 
+            // picMovements
+            // 
+            picMovements.Location = new Point(11, 20);
+            picMovements.Name = "picMovements";
+            picMovements.Size = new Size(50, 50);
+            picMovements.TabIndex = 0;
+            picMovements.TabStop = false;
+            // 
             // pnlInventoryOverview
             // 
             pnlInventoryOverview.BackColor = Color.White;
@@ -318,17 +318,6 @@ namespace InventorySystem.Forms.Manager
             pnlInventoryOverview.Name = "pnlInventoryOverview";
             pnlInventoryOverview.Size = new Size(567, 205);
             pnlInventoryOverview.TabIndex = 8;
-            // 
-            // lblInventoryOverview
-            // 
-            lblInventoryOverview.AutoSize = true;
-            lblInventoryOverview.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblInventoryOverview.ForeColor = Color.White;
-            lblInventoryOverview.Location = new Point(57, 10);
-            lblInventoryOverview.Name = "lblInventoryOverview";
-            lblInventoryOverview.Size = new Size(162, 21);
-            lblInventoryOverview.TabIndex = 0;
-            lblInventoryOverview.Text = "Inventory Overview";
             // 
             // pnlInventoryOverviewSub
             // 
@@ -340,6 +329,25 @@ namespace InventorySystem.Forms.Manager
             pnlInventoryOverviewSub.Name = "pnlInventoryOverviewSub";
             pnlInventoryOverviewSub.Size = new Size(567, 42);
             pnlInventoryOverviewSub.TabIndex = 1;
+            // 
+            // picInventory
+            // 
+            picInventory.Location = new Point(12, 6);
+            picInventory.Name = "picInventory";
+            picInventory.Size = new Size(34, 30);
+            picInventory.TabIndex = 1;
+            picInventory.TabStop = false;
+            // 
+            // lblInventoryOverview
+            // 
+            lblInventoryOverview.AutoSize = true;
+            lblInventoryOverview.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblInventoryOverview.ForeColor = Color.White;
+            lblInventoryOverview.Location = new Point(57, 10);
+            lblInventoryOverview.Name = "lblInventoryOverview";
+            lblInventoryOverview.Size = new Size(162, 21);
+            lblInventoryOverview.TabIndex = 0;
+            lblInventoryOverview.Text = "Inventory Overview";
             // 
             // pnlQuickActions
             // 
@@ -358,82 +366,37 @@ namespace InventorySystem.Forms.Manager
             pnlQuickActions.Size = new Size(391, 205);
             pnlQuickActions.TabIndex = 9;
             // 
-            // pnlQuickActionsSub
+            // picView
             // 
-            pnlQuickActionsSub.BackColor = Color.FromArgb(6, 38, 75);
-            pnlQuickActionsSub.BorderStyle = BorderStyle.FixedSingle;
-            pnlQuickActionsSub.Controls.Add(picActions);
-            pnlQuickActionsSub.Controls.Add(lblQuickActions);
-            pnlQuickActionsSub.Location = new Point(0, 0);
-            pnlQuickActionsSub.Name = "pnlQuickActionsSub";
-            pnlQuickActionsSub.Size = new Size(391, 42);
-            pnlQuickActionsSub.TabIndex = 0;
+            picView.Location = new Point(277, 130);
+            picView.Name = "picView";
+            picView.Size = new Size(30, 30);
+            picView.TabIndex = 8;
+            picView.TabStop = false;
             // 
-            // picInventory
+            // picEdit
             // 
-            picInventory.Location = new Point(12, 6);
-            picInventory.Name = "picInventory";
-            picInventory.Size = new Size(34, 30);
-            picInventory.TabIndex = 1;
-            picInventory.TabStop = false;
+            picEdit.Location = new Point(90, 130);
+            picEdit.Name = "picEdit";
+            picEdit.Size = new Size(30, 30);
+            picEdit.TabIndex = 7;
+            picEdit.TabStop = false;
             // 
-            // lblQuickActions
+            // picSearch
             // 
-            lblQuickActions.AutoSize = true;
-            lblQuickActions.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblQuickActions.ForeColor = Color.White;
-            lblQuickActions.Location = new Point(60, 10);
-            lblQuickActions.Name = "lblQuickActions";
-            lblQuickActions.Size = new Size(115, 21);
-            lblQuickActions.TabIndex = 0;
-            lblQuickActions.Text = "Quick Actions";
+            picSearch.Location = new Point(277, 55);
+            picSearch.Name = "picSearch";
+            picSearch.Size = new Size(30, 30);
+            picSearch.TabIndex = 6;
+            picSearch.TabStop = false;
             // 
-            // picActions
+            // picAdd
             // 
-            picActions.Location = new Point(15, 6);
-            picActions.Name = "picActions";
-            picActions.Size = new Size(34, 30);
-            picActions.TabIndex = 1;
-            picActions.TabStop = false;
-            // 
-            // btnAddProduct
-            // 
-            btnAddProduct.BackColor = Color.White;
-            btnAddProduct.FlatStyle = FlatStyle.Flat;
-            btnAddProduct.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            btnAddProduct.ForeColor = Color.FromArgb(10, 39, 93);
-            btnAddProduct.Location = new Point(11, 50);
-            btnAddProduct.Name = "btnAddProduct";
-            btnAddProduct.Size = new Size(181, 69);
-            btnAddProduct.TabIndex = 1;
-            btnAddProduct.Text = "\r\nAdd Product";
-            btnAddProduct.UseVisualStyleBackColor = false;
-            // 
-            // btnEditProduct
-            // 
-            btnEditProduct.BackColor = Color.White;
-            btnEditProduct.FlatStyle = FlatStyle.Flat;
-            btnEditProduct.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            btnEditProduct.ForeColor = Color.FromArgb(10, 39, 93);
-            btnEditProduct.Location = new Point(10, 125);
-            btnEditProduct.Name = "btnEditProduct";
-            btnEditProduct.Size = new Size(182, 70);
-            btnEditProduct.TabIndex = 2;
-            btnEditProduct.Text = "\r\nEdit Product";
-            btnEditProduct.UseVisualStyleBackColor = false;
-            // 
-            // btnSearchInventory
-            // 
-            btnSearchInventory.BackColor = Color.White;
-            btnSearchInventory.FlatStyle = FlatStyle.Flat;
-            btnSearchInventory.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
-            btnSearchInventory.ForeColor = Color.FromArgb(10, 39, 93);
-            btnSearchInventory.Location = new Point(198, 50);
-            btnSearchInventory.Name = "btnSearchInventory";
-            btnSearchInventory.Size = new Size(181, 69);
-            btnSearchInventory.TabIndex = 3;
-            btnSearchInventory.Text = "\r\nSearch Inventory";
-            btnSearchInventory.UseVisualStyleBackColor = false;
+            picAdd.Location = new Point(90, 55);
+            picAdd.Name = "picAdd";
+            picAdd.Size = new Size(30, 30);
+            picAdd.TabIndex = 5;
+            picAdd.TabStop = false;
             // 
             // btnViewReports
             // 
@@ -448,37 +411,74 @@ namespace InventorySystem.Forms.Manager
             btnViewReports.Text = "\r\nView Reports";
             btnViewReports.UseVisualStyleBackColor = false;
             // 
-            // picAdd
+            // btnSearchInventory
             // 
-            picAdd.Location = new Point(90, 55);
-            picAdd.Name = "picAdd";
-            picAdd.Size = new Size(30, 30);
-            picAdd.TabIndex = 5;
-            picAdd.TabStop = false;
+            btnSearchInventory.BackColor = Color.White;
+            btnSearchInventory.FlatStyle = FlatStyle.Flat;
+            btnSearchInventory.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            btnSearchInventory.ForeColor = Color.FromArgb(10, 39, 93);
+            btnSearchInventory.Location = new Point(198, 50);
+            btnSearchInventory.Name = "btnSearchInventory";
+            btnSearchInventory.Size = new Size(181, 69);
+            btnSearchInventory.TabIndex = 3;
+            btnSearchInventory.Text = "\r\nSearch Inventory";
+            btnSearchInventory.UseVisualStyleBackColor = false;
             // 
-            // picSearch
+            // btnEditProduct
             // 
-            picSearch.Location = new Point(277, 55);
-            picSearch.Name = "picSearch";
-            picSearch.Size = new Size(30, 30);
-            picSearch.TabIndex = 6;
-            picSearch.TabStop = false;
+            btnEditProduct.BackColor = Color.White;
+            btnEditProduct.FlatStyle = FlatStyle.Flat;
+            btnEditProduct.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            btnEditProduct.ForeColor = Color.FromArgb(10, 39, 93);
+            btnEditProduct.Location = new Point(10, 125);
+            btnEditProduct.Name = "btnEditProduct";
+            btnEditProduct.Size = new Size(182, 70);
+            btnEditProduct.TabIndex = 2;
+            btnEditProduct.Text = "\r\nEdit Product";
+            btnEditProduct.UseVisualStyleBackColor = false;
             // 
-            // picEdit
+            // btnAddProduct
             // 
-            picEdit.Location = new Point(90, 130);
-            picEdit.Name = "picEdit";
-            picEdit.Size = new Size(30, 30);
-            picEdit.TabIndex = 7;
-            picEdit.TabStop = false;
+            btnAddProduct.BackColor = Color.White;
+            btnAddProduct.FlatStyle = FlatStyle.Flat;
+            btnAddProduct.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold);
+            btnAddProduct.ForeColor = Color.FromArgb(10, 39, 93);
+            btnAddProduct.Location = new Point(11, 50);
+            btnAddProduct.Name = "btnAddProduct";
+            btnAddProduct.Size = new Size(181, 69);
+            btnAddProduct.TabIndex = 1;
+            btnAddProduct.Text = "\r\nAdd Product";
+            btnAddProduct.UseVisualStyleBackColor = false;
             // 
-            // picView
+            // pnlQuickActionsSub
             // 
-            picView.Location = new Point(277, 130);
-            picView.Name = "picView";
-            picView.Size = new Size(30, 30);
-            picView.TabIndex = 8;
-            picView.TabStop = false;
+            pnlQuickActionsSub.BackColor = Color.FromArgb(6, 38, 75);
+            pnlQuickActionsSub.BorderStyle = BorderStyle.FixedSingle;
+            pnlQuickActionsSub.Controls.Add(picActions);
+            pnlQuickActionsSub.Controls.Add(lblQuickActions);
+            pnlQuickActionsSub.Location = new Point(0, 0);
+            pnlQuickActionsSub.Name = "pnlQuickActionsSub";
+            pnlQuickActionsSub.Size = new Size(391, 42);
+            pnlQuickActionsSub.TabIndex = 0;
+            // 
+            // picActions
+            // 
+            picActions.Location = new Point(15, 6);
+            picActions.Name = "picActions";
+            picActions.Size = new Size(34, 30);
+            picActions.TabIndex = 1;
+            picActions.TabStop = false;
+            // 
+            // lblQuickActions
+            // 
+            lblQuickActions.AutoSize = true;
+            lblQuickActions.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblQuickActions.ForeColor = Color.White;
+            lblQuickActions.Location = new Point(60, 10);
+            lblQuickActions.Name = "lblQuickActions";
+            lblQuickActions.Size = new Size(115, 21);
+            lblQuickActions.TabIndex = 0;
+            lblQuickActions.Text = "Quick Actions";
             // 
             // pnlRecentActivity
             // 
@@ -489,6 +489,37 @@ namespace InventorySystem.Forms.Manager
             pnlRecentActivity.Name = "pnlRecentActivity";
             pnlRecentActivity.Size = new Size(967, 214);
             pnlRecentActivity.TabIndex = 10;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = Color.FromArgb(6, 38, 75);
+            panel6.Controls.Add(btnViewAll);
+            panel6.Controls.Add(pictureBox1);
+            panel6.Controls.Add(lblbRecentActivity);
+            panel6.Location = new Point(0, 0);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(967, 44);
+            panel6.TabIndex = 2;
+            // 
+            // btnViewAll
+            // 
+            btnViewAll.BackColor = Color.White;
+            btnViewAll.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnViewAll.ForeColor = Color.FromArgb(0, 75, 190);
+            btnViewAll.Location = new Point(843, 11);
+            btnViewAll.Name = "btnViewAll";
+            btnViewAll.Size = new Size(112, 23);
+            btnViewAll.TabIndex = 2;
+            btnViewAll.Text = "View All   -->";
+            btnViewAll.UseVisualStyleBackColor = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(10, 7);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(34, 30);
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
             // lblbRecentActivity
             // 
@@ -515,25 +546,6 @@ namespace InventorySystem.Forms.Manager
             dgvRecentActivity.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvRecentActivity.Size = new Size(959, 159);
             dgvRecentActivity.TabIndex = 1;
-            // 
-            // panel6
-            // 
-            panel6.BackColor = Color.FromArgb(6, 38, 75);
-            panel6.Controls.Add(btnViewAll);
-            panel6.Controls.Add(pictureBox1);
-            panel6.Controls.Add(lblbRecentActivity);
-            panel6.Location = new Point(0, 0);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(967, 44);
-            panel6.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(10, 7);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(34, 30);
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
             // 
             // Column1
             // 
@@ -563,18 +575,6 @@ namespace InventorySystem.Forms.Manager
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
             // 
-            // btnViewAll
-            // 
-            btnViewAll.BackColor = Color.White;
-            btnViewAll.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnViewAll.ForeColor = Color.FromArgb(0, 75, 190);
-            btnViewAll.Location = new Point(843, 11);
-            btnViewAll.Name = "btnViewAll";
-            btnViewAll.Size = new Size(112, 23);
-            btnViewAll.TabIndex = 2;
-            btnViewAll.Text = "View All   -->";
-            btnViewAll.UseVisualStyleBackColor = false;
-            // 
             // ManagerDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -596,33 +596,33 @@ namespace InventorySystem.Forms.Manager
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picProducts).EndInit();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picStock).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picLowStock).EndInit();
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)picProducts).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picStock).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picLowStock).EndInit();
             ((System.ComponentModel.ISupportInitialize)picMovements).EndInit();
             pnlInventoryOverview.ResumeLayout(false);
             pnlInventoryOverviewSub.ResumeLayout(false);
             pnlInventoryOverviewSub.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picInventory).EndInit();
             pnlQuickActions.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)picView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picEdit).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picSearch).EndInit();
+            ((System.ComponentModel.ISupportInitialize)picAdd).EndInit();
             pnlQuickActionsSub.ResumeLayout(false);
             pnlQuickActionsSub.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)picInventory).EndInit();
             ((System.ComponentModel.ISupportInitialize)picActions).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picAdd).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picSearch).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picEdit).EndInit();
-            ((System.ComponentModel.ISupportInitialize)picView).EndInit();
             pnlRecentActivity.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dgvRecentActivity).EndInit();
             panel6.ResumeLayout(false);
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvRecentActivity).EndInit();
             ResumeLayout(false);
         }
 
