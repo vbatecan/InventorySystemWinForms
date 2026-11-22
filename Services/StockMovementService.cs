@@ -6,6 +6,16 @@ using MySql.Data.MySqlClient;
 
 namespace InventorySystem.Services {
     public class StockMovementService {
+        
+        public void StockIn(long productId, decimal quantity, string? storageLocation = null, string? referenceNo = null, string? remarks = null, int? createdBy = null)
+        {
+            RecordMovement(MovementType.In, productId, quantity, storageLocation, referenceNo, remarks, createdBy);
+        }
+        
+        public void StockOut(long productId, decimal quantity, string? storageLocation = null, string? referenceNo = null, string? remarks = null, int? createdBy = null)
+        {
+            RecordMovement(MovementType.Out, productId, quantity, storageLocation, referenceNo, remarks, createdBy);
+        }
 
         public int CountByCreatedAtRange(DateTime start, DateTime end)
         {
@@ -57,35 +67,20 @@ namespace InventorySystem.Services {
             }
 
             using (MySqlConnection conn = Connection.GetConnection()) {
-                using (MySqlTransaction transaction = conn.BeginTransaction()) {
-                    try {
-                        long movementId = InsertMovement(conn, transaction, movementType, productId, quantity, storageLocation, referenceNo, remarks, createdBy);
-                        transaction.Commit();
-                    } catch {
-                        transaction.Rollback();
-                        throw;
-                    }
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO StockMovements (ProductId, MovementType, Quantity, StorageLocation, ReferenceNo, Remarks, CreatedBy) VALUES (@productId, @movementType, @quantity, @storageLocation, @referenceNo, @remarks, @createdBy)", conn);
+                cmd.Parameters.AddWithValue("@productId", productId);
+                cmd.Parameters.AddWithValue("@movementType", movementType.ToString());
+                cmd.Parameters.AddWithValue("@quantity", quantity);
+                cmd.Parameters.AddWithValue("@storageLocation", storageLocation ?? (object) DBNull.Value);
+                cmd.Parameters.AddWithValue("@referenceNo", referenceNo ?? (object) DBNull.Value);
+                cmd.Parameters.AddWithValue("@remarks", remarks ?? (object) DBNull.Value);
+                cmd.Parameters.AddWithValue("@createdBy", createdBy ?? (object) DBNull.Value);
+
+                int result = cmd.ExecuteNonQuery();
+                if (result <= 0) {
+                    throw new OperationFailedException("Failed to create stock movement");
                 }
             }
-        }
-
-        private long InsertMovement(MySqlConnection conn, MySqlTransaction transaction, MovementType movementType, long productId, decimal quantity, string? storageLocation, string? referenceNo, string? remarks, int? createdBy)
-        {
-            MySqlCommand cmd = new MySqlCommand("INSERT INTO StockMovements (ProductId, MovementType, Quantity, StorageLocation, ReferenceNo, Remarks, CreatedBy) VALUES (@productId, @movementType, @quantity, @storageLocation, @referenceNo, @remarks, @createdBy)", conn, transaction);
-            cmd.Parameters.AddWithValue("@productId", productId);
-            cmd.Parameters.AddWithValue("@movementType", movementType.ToString());
-            cmd.Parameters.AddWithValue("@quantity", quantity);
-            cmd.Parameters.AddWithValue("@storageLocation", storageLocation ?? (object) DBNull.Value);
-            cmd.Parameters.AddWithValue("@referenceNo", referenceNo ?? (object) DBNull.Value);
-            cmd.Parameters.AddWithValue("@remarks", remarks ?? (object) DBNull.Value);
-            cmd.Parameters.AddWithValue("@createdBy", createdBy ?? (object) DBNull.Value);
-
-            int result = cmd.ExecuteNonQuery();
-            if (result <= 0) {
-                throw new OperationFailedException("Failed to create stock movement");
-            }
-
-            return cmd.LastInsertedId;
         }
         
         public List<StockMovement> Find(string searchTerm, int page = 0, int size = 25)

@@ -12,15 +12,15 @@ namespace InventorySystem.Forms.Staff
 {
     public partial class StockInControl : UserControl {
 
-        private StockService stockService = new StockService();
-        private ProductService productService = new ProductService();
+        private readonly StockMovementService StockMovementService = new ();
+        private ProductService ProductService = new();
 
         public StockInControl() {
             InitializeComponent();
         }
 
         private void LoadStockInRecords() {
-            List<StockMovement> stockMovements = stockService.All();
+            List<StockMovement> stockMovements = StockMovementService.All();
             dgvStockInLog.Rows.Clear();
 
             stockMovements.ForEach(stockMovement => {
@@ -37,7 +37,7 @@ namespace InventorySystem.Forms.Staff
         }
 
         private void ImportProductsToProductSelection() {
-            List<Product> products = productService.All();
+            List<Product> products = ProductService.All();
             cmbProducts.Items.Clear();
             for (int i = 0; i < products.Count; i++) {
                 cmbProducts.Items.Add(products[i].ProductName);
@@ -45,7 +45,31 @@ namespace InventorySystem.Forms.Staff
         }
 
         private void btnSaveStock_Click(object sender, EventArgs e) {
+            if (cmbProducts.SelectedIndex == -1) {
+                MessageBox.Show("Please select a product.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
 
+            var selectedProduct = ProductService.All()[cmbProducts.SelectedIndex];
+            decimal quantity = NumQuantity.Value;
+            string storageLocation = txtLocation.Text;
+            string referenceNo = txtRefNo.Text;
+            string remarks = rtxtRemarks.Text;
+
+            try {
+                StockMovementService.StockIn(
+                    selectedProduct.ProductId,
+                    quantity,
+                    storageLocation,
+                    referenceNo,
+                    remarks
+                );
+                LoadStockInRecords();
+                btnClear_Click(sender, e);
+                MessageBox.Show("Stock in recorded successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            } catch (Exception ex) {
+                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void btnClear_Click(object sender, EventArgs e) {
