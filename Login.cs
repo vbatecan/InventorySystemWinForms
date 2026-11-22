@@ -1,12 +1,18 @@
+using InventorySystem.Exceptions;
+using InventorySystem.Forms.Manager;
+using InventorySystem.Forms.Superadmin;
+using InventorySystem.Models;
+using InventorySystem.Models.Enums;
+using InventorySystem.Services;
 using InventorySystem.Shared;
-using Microsoft.VisualBasic.ApplicationServices;
-using MySql.Data.MySqlClient;
-using User = InventorySystemWinForms.User;
 
 namespace InventorySystem
 {
-    public partial class Login : Form
-    {
+    
+    public partial class Login : Form {
+
+        private readonly AuthenticationService authService = new AuthenticationService();
+        
         public Login()
         {
             InitializeComponent();
@@ -24,8 +30,7 @@ namespace InventorySystem
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            // Add email validation
-            if (ValidationUtils.ValidateEmail(txtEmail.Text))
+            if (ValidationUtils.ValidateEmail(txtUsername.Text))
             {
                 MessageBox.Show("Email format is not valid", "Validation Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -34,25 +39,37 @@ namespace InventorySystem
                 MessageBox.Show(ValidationUtils.ValidatePassword(txtPassword.Text));
             }
 
-            using (MySqlConnection conn = Connection.GetConnection())
-            {
-                var cmd = new MySqlCommand("SELECT id, email, password FROM users WHERE email = @email AND password = @password", conn);
-                cmd.Parameters.AddWithValue("@email", txtEmail.Text);
-                cmd.Parameters.AddWithValue("@password", txtPassword.Text);
-                var reader = cmd.ExecuteReader();
-                if (reader.Read())
-                {
-                    var user = User.FromReader(reader);
-                    if (user.Password == txtPassword.Text)
-                    {
-                        MessageBox.Show("Login successful", "Login Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+            try {
+
+                User? user = authService.Login(txtUsername.Text, txtPassword.Text);
+
+                switch (user.UserRole) {
+                    case UserRole.Admin:
+                        AdminForm superAdminForm = new AdminForm();
+                        superAdminForm.Show();
+                        break;
+                    case UserRole.Staff:
+                        StaffForm staffForm = new StaffForm();
+                        staffForm.Show();
+                        break;
+                    case UserRole.Manager:
+                        ManagerForm managerForm = new ManagerForm();
+                        managerForm.Show();
+                        break;
+                    default:
+                        MessageBox.Show("Invalid user role");
+                        break;
                 }
-                else
-                {
-                    MessageBox.Show("Invalid credentials", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+
+                Hide();
+            } catch (InvalidLoginDetailsException) {
+                MessageBox.Show("Username or password is invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void txtEmail_TextChanged(object sender, EventArgs e)
+        {
+            
         }
     }
 }

@@ -19,11 +19,11 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
+            components = new System.ComponentModel.Container();
             panel1 = new Panel();
             btnMinimize = new PictureBox();
             btnClose = new PictureBox();
@@ -31,14 +31,16 @@
             btnLogin = new Button();
             txtPassword = new TextBox();
             label4 = new Label();
-            txtEmail = new TextBox();
+            txtUsername = new TextBox();
             label3 = new Label();
             label1 = new Label();
             label2 = new Label();
+            erp = new ErrorProvider(components);
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)btnMinimize).BeginInit();
             ((System.ComponentModel.ISupportInitialize)btnClose).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)erp).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -80,7 +82,7 @@
             panel2.Controls.Add(btnLogin);
             panel2.Controls.Add(txtPassword);
             panel2.Controls.Add(label4);
-            panel2.Controls.Add(txtEmail);
+            panel2.Controls.Add(txtUsername);
             panel2.Controls.Add(label3);
             panel2.Location = new Point(66, 159);
             panel2.Name = "panel2";
@@ -106,7 +108,8 @@
             txtPassword.Font = new Font("Segoe UI", 12F);
             txtPassword.Location = new Point(27, 161);
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(294, 34);
+            txtPassword.PlaceholderText = "Enter your password";
+            txtPassword.Size = new Size(294, 29);
             txtPassword.TabIndex = 3;
             // 
             // label4
@@ -115,17 +118,19 @@
             label4.Font = new Font("Segoe UI", 12F);
             label4.Location = new Point(27, 121);
             label4.Name = "label4";
-            label4.Size = new Size(93, 28);
+            label4.Size = new Size(76, 21);
             label4.TabIndex = 2;
             label4.Text = "Password";
             // 
-            // txtEmail
+            // txtUsername
             // 
-            txtEmail.Font = new Font("Segoe UI", 12F);
-            txtEmail.Location = new Point(27, 58);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(294, 34);
-            txtEmail.TabIndex = 1;
+            txtUsername.Font = new Font("Segoe UI", 12F);
+            txtUsername.Location = new Point(27, 58);
+            txtUsername.Name = "txtUsername";
+            txtUsername.PlaceholderText = "Enter your username";
+            txtUsername.Size = new Size(294, 29);
+            txtUsername.TabIndex = 1;
+            txtUsername.TextChanged += txtEmail_TextChanged;
             // 
             // label3
             // 
@@ -133,17 +138,17 @@
             label3.Font = new Font("Segoe UI", 12F);
             label3.Location = new Point(27, 27);
             label3.Name = "label3";
-            label3.Size = new Size(138, 28);
+            label3.Size = new Size(81, 21);
             label3.TabIndex = 0;
-            label3.Text = "Email Address:";
+            label3.Text = "Username";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(157, 55);
+            label1.Location = new Point(179, 62);
             label1.Name = "label1";
-            label1.Size = new Size(146, 54);
+            label1.Size = new Size(119, 45);
             label1.TabIndex = 2;
             label1.Text = "Sign in";
             // 
@@ -152,15 +157,19 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ControlDark;
-            label2.Location = new Point(151, 112);
+            label2.Location = new Point(177, 116);
             label2.Name = "label2";
-            label2.Size = new Size(154, 28);
+            label2.Size = new Size(124, 21);
             label2.TabIndex = 3;
             label2.Text = "It's fast and easy";
             // 
+            // erp
+            // 
+            erp.ContainerControl = this;
+            // 
             // Login
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(482, 520);
@@ -169,6 +178,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
@@ -177,6 +187,7 @@
             ((System.ComponentModel.ISupportInitialize)btnClose).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)erp).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -186,14 +197,14 @@
         private Panel panel1;
         private PictureBox btnMinimize;
         private PictureBox btnClose;
-        private Panel panel2;
+        private System.Windows.Forms.Panel panel2;
         private Label label1;
         private Label label2;
-        private Button button1;
         private TextBox txtPassword;
         private Label label4;
-        private TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtUsername;
         private Label label3;
         private Button btnLogin;
+        private ErrorProvider erp;
     }
 }

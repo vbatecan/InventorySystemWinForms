@@ -32,11 +32,12 @@
             // 
             // dashboard
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
+            Margin = new Padding(2, 2, 2, 2);
             Name = "dashboard";
-            Size = new Size(1413, 699);
+            Size = new Size(1024, 681);
             ResumeLayout(false);
         }
 
