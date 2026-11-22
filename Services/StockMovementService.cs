@@ -87,5 +87,67 @@ namespace InventorySystem.Services {
 
             return cmd.LastInsertedId;
         }
+        
+        public List<StockMovement> Find(string searchTerm, int page = 0, int size = 25)
+        {
+            List<StockMovement> movements = new();
+            using (MySqlConnection conn = Connection.GetConnection()) {
+                MySqlCommand cmd = new("SELECT * FROM StockMovements WHERE ReferenceNo LIKE @searchTerm OR Remarks LIKE @searchTerm LIMIT @page, @size", conn);
+                cmd.Parameters.AddWithValue("@searchTerm", $"%{searchTerm}%");
+                cmd.Parameters.AddWithValue("@page", page);
+                cmd.Parameters.AddWithValue("@size", size);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read()) {
+                    movements.Add(StockMovement.FromReader(reader));
+                }
+            }
+
+            return movements;
+        }
+
+        public List<StockMovement> Find(string searchTerm, MovementType movementType, int page = 0, int size = 25)
+        {
+            List<StockMovement> movements = new();
+            using (MySqlConnection conn = Connection.GetConnection()) {
+                MySqlCommand cmd = new(
+                    "SELECT * FROM StockMovements WHERE (ReferenceNo LIKE @searchTerm OR Remarks LIKE @searchTerm) AND MovementType = @movementType LIMIT @page, @size",
+                    conn
+                );
+                cmd.Parameters.AddWithValue("@searchTerm", $"%{searchTerm}%");
+                cmd.Parameters.AddWithValue("@movementType", movementType.ToString());
+                cmd.Parameters.AddWithValue("@page", page);
+                cmd.Parameters.AddWithValue("@size", size);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read()) {
+                    movements.Add(StockMovement.FromReader(reader));
+                }
+            }
+
+            return movements;
+        }
+
+        public List<StockMovement> Find(string searchTerm, Category category, int page = 0, int size = 25)
+        {
+            List<StockMovement> movements = new();
+            using (MySqlConnection conn = Connection.GetConnection()) {
+                MySqlCommand cmd = new(
+                    "SELECT * FROM StockMovements WHERE (ReferenceNo LIKE @searchTerm OR Remarks LIKE @searchTerm) AND CategoryId = @categoryId LIMIT @page, @size",
+                    conn
+                );
+                cmd.Parameters.AddWithValue("@searchTerm", $"%{searchTerm}%");
+                cmd.Parameters.AddWithValue("@categoryId", category.CategoryId);
+                cmd.Parameters.AddWithValue("@page", page);
+                cmd.Parameters.AddWithValue("@size", size);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                while (reader.Read()) {
+                    movements.Add(StockMovement.FromReader(reader));
+                }
+            }
+
+            return movements;
+        }
     }
 }

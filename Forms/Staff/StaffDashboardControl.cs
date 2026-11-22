@@ -8,6 +8,7 @@ namespace InventorySystem.Forms.Staff
         private readonly ProductService ProductService = new();
         private readonly StockService StockService = new();
         private readonly StockMovementService StockMovementService = new();
+        private readonly CategoryService CategoryService = new();
 
         public StaffDashboardControl() {
             InitializeComponent();
@@ -50,10 +51,41 @@ namespace InventorySystem.Forms.Staff
         private void DashboardControl_Load(object sender, EventArgs e) {
             LoadKpis();
             LoadRecentTransactions();
+
+            List<Category> categories = CategoryService.All();
+            categories.ForEach(category => {
+                cmbProductCategory.Items.Add(category.CategoryName);
+            }
+            );
         }
 
         private void btnRefresh_Click(object sender, EventArgs e) {
             LoadRecentTransactions();
+        }
+        
+        private void btnSearch_Click(object sender, EventArgs e) {
+            string searchTerm = txtSearch.Text;
+            string selectedCategory = cmbProductCategory.SelectedItem?.ToString() ?? string.Empty;
+            
+            List<StockMovement> movements;
+            
+            if (!string.IsNullOrEmpty(searchTerm) || !string.IsNullOrEmpty(selectedCategory)) {
+                Category category = CategoryService.GetByName(selectedCategory);
+                movements = StockMovementService.Find(searchTerm, category);
+            } else {
+                movements = StockMovementService.Find(searchTerm);
+            }
+
+            dgvTransactions.Rows.Clear();
+            movements.ForEach(movement => {
+                dgvTransactions.Rows.Add(
+                    movement.ProductId,
+                    movement.MovementType.ToString(),
+                    movement.Quantity,
+                    movement.StorageLocation,
+                    movement.ReferenceNo
+                );
+            });
         }
     }
 }

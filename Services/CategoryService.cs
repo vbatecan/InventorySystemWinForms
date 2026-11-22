@@ -113,6 +113,23 @@ namespace InventorySystem.Services
                 }
             }
         }
+        
+        public Category GetByName(string categoryName)
+        {
+            using (MySqlConnection conn = Connection.GetConnection())
+            {
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM Categories WHERE CategoryName = @categoryName", conn);
+                cmd.Parameters.AddWithValue("@categoryName", categoryName);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    return Category.FromReader(reader);
+                }
+
+                throw new EntityNotFoundException("Category with name " + categoryName + " is not found");
+            }
+        }
 
         public DataTable SearchCategories(string searchTerm, string statusFilter)
         {
