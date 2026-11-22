@@ -54,10 +54,6 @@
             panel2 = new Panel();
             label2 = new Label();
             pnlFilters = new Panel();
-            cmbStockStats = new ComboBox();
-            lblStockStatus = new Label();
-            cmbProductCategory = new ComboBox();
-            lblCategory = new Label();
             txtSearch = new TextBox();
             lblSearch = new Label();
             btnRefresh = new Button();
@@ -249,14 +245,15 @@
             dgvTransactions.AllowUserToAddRows = false;
             dgvTransactions.AllowUserToDeleteRows = false;
             dgvTransactions.BackgroundColor = Color.White;
+            dgvTransactions.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
             dgvTransactions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvTransactions.Columns.AddRange(new DataGridViewColumn[] { ProductID, MovementType, Quantity, StorageLocation, ReferenceNo, CreatedBy });
             dgvTransactions.GridColor = Color.FromArgb(215, 226, 242);
-            dgvTransactions.Location = new Point(0, 34);
+            dgvTransactions.Location = new Point(0, 37);
             dgvTransactions.Name = "dgvTransactions";
             dgvTransactions.ReadOnly = true;
             dgvTransactions.RowHeadersVisible = false;
-            dgvTransactions.Size = new Size(988, 257);
+            dgvTransactions.Size = new Size(988, 254);
             dgvTransactions.TabIndex = 8;
             dgvTransactions.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -329,12 +326,10 @@
             pnlFilters.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             pnlFilters.BackColor = Color.White;
             pnlFilters.BorderStyle = BorderStyle.FixedSingle;
-            pnlFilters.Controls.Add(cmbStockStats);
-            pnlFilters.Controls.Add(lblStockStatus);
-            pnlFilters.Controls.Add(cmbProductCategory);
-            pnlFilters.Controls.Add(lblCategory);
+            pnlFilters.Controls.Add(btnRefresh);
             pnlFilters.Controls.Add(txtSearch);
             pnlFilters.Controls.Add(lblSearch);
+            pnlFilters.Controls.Add(btnSearch);
             pnlFilters.Location = new Point(21, 264);
             pnlFilters.Margin = new Padding(0);
             pnlFilters.Name = "pnlFilters";
@@ -342,68 +337,23 @@
             pnlFilters.Size = new Size(988, 57);
             pnlFilters.TabIndex = 10;
             // 
-            // cmbStockStats
-            // 
-            cmbStockStats.BackColor = Color.White;
-            cmbStockStats.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbStockStats.FormattingEnabled = true;
-            cmbStockStats.IntegralHeight = false;
-            cmbStockStats.Location = new Point(745, 16);
-            cmbStockStats.Name = "cmbStockStats";
-            cmbStockStats.Size = new Size(175, 23);
-            cmbStockStats.TabIndex = 2;
-            // 
-            // lblStockStatus
-            // 
-            lblStockStatus.BackColor = Color.Transparent;
-            lblStockStatus.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblStockStatus.Location = new Point(661, 16);
-            lblStockStatus.Name = "lblStockStatus";
-            lblStockStatus.Size = new Size(100, 23);
-            lblStockStatus.TabIndex = 2;
-            lblStockStatus.Text = "Stock Status:";
-            lblStockStatus.TextAlign = ContentAlignment.MiddleLeft;
-            // 
-            // cmbProductCategory
-            // 
-            cmbProductCategory.BackColor = Color.White;
-            cmbProductCategory.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbProductCategory.ForeColor = Color.FromArgb(10, 30, 70);
-            cmbProductCategory.FormattingEnabled = true;
-            cmbProductCategory.IntegralHeight = false;
-            cmbProductCategory.Location = new Point(474, 16);
-            cmbProductCategory.Name = "cmbProductCategory";
-            cmbProductCategory.Size = new Size(175, 23);
-            cmbProductCategory.TabIndex = 2;
-            // 
-            // lblCategory
-            // 
-            lblCategory.BackColor = Color.Transparent;
-            lblCategory.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCategory.Location = new Point(412, 16);
-            lblCategory.Name = "lblCategory";
-            lblCategory.Size = new Size(75, 23);
-            lblCategory.TabIndex = 2;
-            lblCategory.Text = "Category:";
-            lblCategory.TextAlign = ContentAlignment.MiddleLeft;
-            // 
             // txtSearch
             // 
             txtSearch.ForeColor = Color.FromArgb(30, 45, 70);
-            txtSearch.Location = new Point(165, 16);
+            txtSearch.Location = new Point(110, 15);
             txtSearch.MaxLength = 100;
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Enter product name...";
-            txtSearch.Size = new Size(211, 23);
+            txtSearch.Size = new Size(555, 23);
             txtSearch.TabIndex = 2;
             // 
             // lblSearch
             // 
             lblSearch.BackColor = Color.Transparent;
             lblSearch.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSearch.Location = new Point(53, 16);
+            lblSearch.Location = new Point(10, 14);
             lblSearch.Name = "lblSearch";
-            lblSearch.Size = new Size(106, 23);
+            lblSearch.Size = new Size(105, 23);
             lblSearch.TabIndex = 2;
             lblSearch.Text = "Search Product:";
             lblSearch.TextAlign = ContentAlignment.MiddleLeft;
@@ -415,7 +365,7 @@
             btnRefresh.FlatStyle = FlatStyle.Flat;
             btnRefresh.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnRefresh.ForeColor = Color.White;
-            btnRefresh.Location = new Point(858, 624);
+            btnRefresh.Location = new Point(825, 9);
             btnRefresh.Name = "btnRefresh";
             btnRefresh.Size = new Size(150, 34);
             btnRefresh.TabIndex = 2;
@@ -428,7 +378,7 @@
             btnSearch.Cursor = Cursors.Hand;
             btnSearch.FlatStyle = FlatStyle.Flat;
             btnSearch.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSearch.Location = new Point(704, 624);
+            btnSearch.Location = new Point(671, 8);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(148, 34);
             btnSearch.TabIndex = 2;
@@ -441,11 +391,9 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(245, 248, 253);
-            Controls.Add(btnRefresh);
             Controls.Add(pnlFilters);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(btnSearch);
             Controls.Add(RecentTransactionHeader);
             Controls.Add(RecentTransaction);
             Controls.Add(LowStockProd);
@@ -500,10 +448,6 @@
         private Label label2;
         private Panel pnlFilters;
         private Button btnRefresh;
-        private ComboBox cmbStockStats;
-        private Label lblStockStatus;
-        private ComboBox cmbProductCategory;
-        private Label lblCategory;
         private Button btnSearch;
         private TextBox txtSearch;
         private Label lblSearch;
