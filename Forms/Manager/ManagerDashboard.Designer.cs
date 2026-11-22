@@ -1,4 +1,4 @@
-﻿namespace InventorySystem.Forms.Manager
+namespace InventorySystem.Forms.Manager
 {
     partial class ManagerDashboard
     {
