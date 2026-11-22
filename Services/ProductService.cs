@@ -93,5 +93,14 @@ namespace InventorySystem.Services {
                 }
             }
         }
+
+        public int Count()
+        {
+            MySqlConnection conn = Connection.GetConnection();
+            MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM Products", conn);
+
+            int rowCount = (int) cmd.ExecuteScalar();
+            return rowCount;
+        }
     }
 }

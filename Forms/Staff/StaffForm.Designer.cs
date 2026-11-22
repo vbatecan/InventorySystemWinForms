@@ -26,8 +26,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             panel1 = new Panel();
             button4 = new Button();
             btnStockHistory = new Button();
@@ -117,13 +116,13 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Franklin Gothic Medium", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Franklin Gothic Medium", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Transparent;
-            label1.Location = new Point(8, 9);
+            label1.Location = new Point(28, 24);
             label1.Name = "label1";
-            label1.Size = new Size(135, 20);
+            label1.Size = new Size(172, 37);
             label1.TabIndex = 1;
-            label1.Text = "Stock Something";
+            label1.Text = "Staff Form";
             // 
             // panelContainer
             // 
