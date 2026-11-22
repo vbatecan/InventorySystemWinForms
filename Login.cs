@@ -41,19 +41,19 @@ namespace InventorySystem
 
             try {
 
-                User? user = authService.Login(txtUsername.Text, txtPassword.Text);
+                User user = authService.Login(txtUsername.Text, txtPassword.Text);
 
                 switch (user.UserRole) {
                     case UserRole.Admin:
-                        AdminForm superAdminForm = new AdminForm();
+                        AdminForm superAdminForm = new();
                         superAdminForm.Show();
                         break;
                     case UserRole.Staff:
-                        StaffForm staffForm = new StaffForm();
+                        StaffForm staffForm = new();
                         staffForm.Show();
                         break;
                     case UserRole.Manager:
-                        ManagerForm managerForm = new ManagerForm();
+                        ManagerForm managerForm = new();
                         managerForm.Show();
                         break;
                     default:

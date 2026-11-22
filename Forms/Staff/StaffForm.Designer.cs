@@ -143,6 +143,7 @@
             Controls.Add(panel1);
             Name = "StaffForm";
             Text = "StaffForm";
+            Load += StaffForm_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);

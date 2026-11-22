@@ -65,9 +65,8 @@ person's name, such as `jessica.smith`, with numeric suffixes for duplicates.
 `--seed` controls the generated values; SKUs include a fresh batch token.
 Matching categories and standard units are reused on subsequent runs. Requests
 for more than eight categories add numbered sections of those categories.
-Conflicting unit names/symbols cause a rollback. Existing
-rows are never deleted or updated. Inserts use parameters and one transaction;
-a failed insert rolls back the batch. Dry runs do not connect to MySQL.
+Conflicting unit names/symbols cause a rollback. By default, seeding preserves
+existing rows. Dry runs do not connect to MySQL.
 
 The first generated user is an active `Admin`; the others are active `Staff`.
 The script prints the generated admin username. All generated users have the
@@ -85,6 +84,17 @@ Implementation references: [Faker](https://faker.readthedocs.io/en/master/) and
 [PyMySQL transactions](https://pymysql.readthedocs.io/en/latest/modules/connections.html).
 
 ## Reset the database
+
+Pass `--clear` to delete all rows from the seven inventory tables, including
+users and audit logs, before inserting seed data. The deletes and inserts
+share one transaction, so a failed seed rolls back the deletes too.
+Auto-increment counters keep their current sequence. Add `--dry-run` to
+preview the reset and generate data without connecting to MySQL.
+
+```powershell
+scripts/seeder/.venv/Scripts/python.exe scripts/seeder/seed.py --clear --dry-run
+scripts/seeder/.venv/Scripts/python.exe scripts/seeder/seed.py --clear
+```
 
 `reset_db.py` empties all seven inventory tables, including users and audit
 logs, and resets auto-increment counters. It reads the same connection settings

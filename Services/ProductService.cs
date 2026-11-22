@@ -99,8 +99,7 @@ namespace InventorySystem.Services {
             MySqlConnection conn = Connection.GetConnection();
             MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM Products", conn);
 
-            int rowCount = (int) cmd.ExecuteScalar();
-            return rowCount;
+            return Convert.ToInt32(cmd.ExecuteScalar());
         }
     }
 }

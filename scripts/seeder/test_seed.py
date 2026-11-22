@@ -5,7 +5,7 @@ import io
 import unittest
 from collections import defaultdict
 from decimal import Decimal
-from unittest.mock import MagicMock, patch
+from unittest.mock import MagicMock, call, patch
 
 import seed
 
@@ -103,9 +103,30 @@ class SeederTests(unittest.TestCase):
 
     def test_full_dry_run_never_connects(self):
         with patch.object(seed.pymysql, 'connect') as connect, contextlib.redirect_stdout(io.StringIO()):
-            result = seed.main(['--preset', 'medium', '--dry-run', '--batch-size', '31', '--quiet'])
+            result = seed.main(['--preset', 'medium', '--dry-run', '--clear', '--batch-size', '31', '--quiet'])
         self.assertEqual(result, 0)
         connect.assert_not_called()
+
+    def test_clear_deletes_child_tables_first_before_inserting(self):
+        for argv in ([], ['--clear']):
+            with self.subTest(argv=argv):
+                connection = MagicMock()
+                cursor = connection.cursor.return_value.__enter__.return_value
+                cursor.fetchall.return_value = [(table, 'InnoDB') for table in seed.TABLES]
+
+                def execute(sql, *params):
+                    if sql.startswith(('DELETE', 'INSERT')):
+                        connection.begin.assert_called_once()
+
+                cursor.execute.side_effect = execute
+                args = seed.parse_args(argv)
+                seed.insert_parents(connection, {'Suppliers': [{'SupplierName': 'Demo'}]}, clear=args.clear)
+
+                writes = cursor.execute.call_args_list[1:]
+                expected = [call(f'DELETE FROM `{table}`') for table in reversed(seed.TABLES)] if argv else []
+                self.assertEqual(writes, expected + [
+                    call('INSERT INTO `Suppliers` (`SupplierName`) VALUES (%s)', ('Demo',))
+                ])
 
     def test_success_commits_and_errors_or_interrupts_roll_back(self):
         for failure in (None, seed.pymysql.IntegrityError('test failure'), KeyboardInterrupt()):

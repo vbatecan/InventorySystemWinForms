@@ -33,11 +33,10 @@
             lblPageDescription = new Label();
             StaffPageTitle = new Label();
             panel1 = new Panel();
-            textBox2 = new TextBox();
+            cbxCreatedBy = new ComboBox();
             btnSearch = new Button();
             btnStockOutClear = new Button();
             label2 = new Label();
-            label3 = new Label();
             Movement = new ComboBox();
             ProductSearch = new TextBox();
             MovementType = new Label();
@@ -48,7 +47,6 @@
             panel2 = new Panel();
             panel3 = new Panel();
             label6 = new Label();
-            cbxCreatedBy = new ComboBox();
             pnlPageHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picPageIcon).BeginInit();
             panel1.SuspendLayout();
@@ -117,11 +115,9 @@
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(cbxCreatedBy);
-            panel1.Controls.Add(textBox2);
             panel1.Controls.Add(btnSearch);
             panel1.Controls.Add(btnStockOutClear);
             panel1.Controls.Add(label2);
-            panel1.Controls.Add(label3);
             panel1.Controls.Add(Movement);
             panel1.Controls.Add(ProductSearch);
             panel1.Controls.Add(MovementType);
@@ -133,12 +129,13 @@
             panel1.Size = new Size(988, 125);
             panel1.TabIndex = 4;
             // 
-            // textBox2
+            // cbxCreatedBy
             // 
-            textBox2.Location = new Point(465, 71);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(156, 23);
-            textBox2.TabIndex = 17;
+            cbxCreatedBy.FormattingEnabled = true;
+            cbxCreatedBy.Location = new Point(156, 72);
+            cbxCreatedBy.Name = "cbxCreatedBy";
+            cbxCreatedBy.Size = new Size(211, 23);
+            cbxCreatedBy.TabIndex = 18;
             // 
             // btnSearch
             // 
@@ -147,7 +144,7 @@
             btnSearch.FlatStyle = FlatStyle.Flat;
             btnSearch.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSearch.ForeColor = Color.White;
-            btnSearch.Location = new Point(638, 66);
+            btnSearch.Location = new Point(794, 22);
             btnSearch.Name = "btnSearch";
             btnSearch.Size = new Size(136, 30);
             btnSearch.TabIndex = 16;
@@ -181,26 +178,15 @@
             label2.Text = "Created by :";
             label2.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // label3
-            // 
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(384, 71);
-            label3.Name = "label3";
-            label3.Size = new Size(75, 23);
-            label3.TabIndex = 12;
-            label3.Text = "Created at :";
-            label3.TextAlign = ContentAlignment.MiddleLeft;
-            // 
             // Movement
             // 
             Movement.BackColor = Color.White;
             Movement.DropDownStyle = ComboBoxStyle.DropDownList;
             Movement.FormattingEnabled = true;
             Movement.IntegralHeight = false;
-            Movement.Location = new Point(794, 27);
+            Movement.Location = new Point(505, 73);
             Movement.Name = "Movement";
-            Movement.Size = new Size(136, 23);
+            Movement.Size = new Size(223, 23);
             Movement.TabIndex = 5;
             // 
             // ProductSearch
@@ -212,12 +198,13 @@
             ProductSearch.PlaceholderText = "Enter product name...";
             ProductSearch.Size = new Size(211, 23);
             ProductSearch.TabIndex = 9;
+            ProductSearch.TextChanged += ProductSearch_TextChanged;
             // 
             // MovementType
             // 
             MovementType.BackColor = Color.Transparent;
             MovementType.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            MovementType.Location = new Point(638, 27);
+            MovementType.Location = new Point(384, 71);
             MovementType.Name = "MovementType";
             MovementType.Size = new Size(136, 23);
             MovementType.TabIndex = 6;
@@ -242,9 +229,9 @@
             ProdCategory.ForeColor = Color.FromArgb(10, 30, 70);
             ProdCategory.FormattingEnabled = true;
             ProdCategory.IntegralHeight = false;
-            ProdCategory.Location = new Point(465, 27);
+            ProdCategory.Location = new Point(505, 27);
             ProdCategory.Name = "ProdCategory";
-            ProdCategory.Size = new Size(156, 23);
+            ProdCategory.Size = new Size(223, 23);
             ProdCategory.TabIndex = 7;
             // 
             // Category
@@ -300,14 +287,6 @@
             label6.TabIndex = 9;
             label6.Text = "Transaction Ledger";
             // 
-            // cbxCreatedBy
-            // 
-            cbxCreatedBy.FormattingEnabled = true;
-            cbxCreatedBy.Location = new Point(156, 72);
-            cbxCreatedBy.Name = "cbxCreatedBy";
-            cbxCreatedBy.Size = new Size(211, 23);
-            cbxCreatedBy.TabIndex = 18;
-            // 
             // StockHistoryControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -319,6 +298,7 @@
             Controls.Add(label1);
             Name = "StockHistoryControl";
             Size = new Size(1024, 681);
+            Load += StockHistoryControl_Load;
             pnlPageHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picPageIcon).EndInit();
             panel1.ResumeLayout(false);
@@ -346,11 +326,9 @@
         private ComboBox ProdCategory;
         private Label Category;
         private Label label2;
-        private Label label3;
         private DataGridView dgvTransactionLedger;
         private Panel panel2;
         private Panel panel3;
-        private TextBox textBox2;
         private Button btnSearch;
         private Button btnStockOutClear;
         private Label label6;
