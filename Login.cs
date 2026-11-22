@@ -32,7 +32,7 @@ namespace InventorySystem
         {
             if (ValidationUtils.ValidateEmail(txtUsername.Text))
             {
-                MessageBox.Show("Email format is not valid", "Validation Error", MessageBoxButtons.OK,
+                MessageBox.Show(@"Email format is not valid", "Validation Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             } else if (!ValidationUtils.ValidatePassword(txtPassword.Text).Equals("valid"))
             {
@@ -63,7 +63,7 @@ namespace InventorySystem
 
                 Hide();
             } catch (InvalidLoginDetailsException) {
-                MessageBox.Show("Username or password is invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Username or password is invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

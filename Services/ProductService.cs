@@ -36,6 +36,21 @@ namespace InventorySystem.Services {
             }
         }
 
+        public Product GetByName(string productName)
+        {
+            using (MySqlConnection conn = Connection.GetConnection()) {
+                MySqlCommand cmd = new("SELECT * FROM Products WHERE ProductName = @productName", conn);
+                cmd.Parameters.AddWithValue("@productName", productName);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows) {
+                    return Product.FromReader(reader);
+                }
+                
+                throw new EntityNotFoundException($"Product with name {productName} is not found");
+            }
+        }
+
         public List<Product> GetAllByProductId(List<int> productIds)
         {
             List<Product> products = new();

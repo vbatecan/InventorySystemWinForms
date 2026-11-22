@@ -77,7 +77,7 @@ namespace InventorySystem.Forms.Admin
                     newUnit.AllowsFraction = chkAllowsFraction.Checked;
 
                     unitsService.Save(newUnit);
-                    MessageBox.Show("Unit created successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(@"Unit created successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -86,7 +86,7 @@ namespace InventorySystem.Forms.Admin
                     editingUnit.AllowsFraction = chkAllowsFraction.Checked;
 
                     unitsService.Update(editingUnit);
-                    MessageBox.Show("Unit updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(@"Unit updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 DialogResult = DialogResult.OK;

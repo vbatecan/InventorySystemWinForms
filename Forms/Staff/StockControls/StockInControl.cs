@@ -46,11 +46,11 @@ namespace InventorySystem.Forms.Staff
 
         private void btnSaveStock_Click(object sender, EventArgs e) {
             if (cmbProducts.SelectedIndex == -1) {
-                MessageBox.Show("Please select a product.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Please select a product.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            var selectedProduct = ProductService.All()[cmbProducts.SelectedIndex];
+            var selectedProduct = ProductService.GetByName(cmbProducts.SelectedItem.ToString());
             decimal quantity = NumQuantity.Value;
             string storageLocation = txtLocation.Text;
             string referenceNo = txtRefNo.Text;
@@ -66,9 +66,9 @@ namespace InventorySystem.Forms.Staff
                 );
                 LoadStockInRecords();
                 btnClear_Click(sender, e);
-                MessageBox.Show("Stock in recorded successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(@"Stock in recorded successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
             } catch (Exception ex) {
-                MessageBox.Show($"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($@"Error: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

@@ -122,7 +122,7 @@ namespace InventorySystem.Forms.Admin
         {
             if (dgvUsers.CurrentRow == null)
             {
-                MessageBox.Show("Please select a user to edit.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(@"Please select a user to edit.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -149,7 +149,7 @@ namespace InventorySystem.Forms.Admin
         {
             if (dgvUsers.CurrentRow == null)
             {
-                MessageBox.Show("Please select a user.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(@"Please select a user.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -162,7 +162,7 @@ namespace InventorySystem.Forms.Admin
 
                 if (currentStatus == true && role == "Admin" && userService.CountActiveAdmins() <= 1)
                 {
-                    MessageBox.Show("Cannot deactivate the only active Admin.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(@"Cannot deactivate the only active Admin.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -272,7 +272,7 @@ namespace InventorySystem.Forms.Admin
         {
             if (dgvCategories.CurrentRow == null)
             {
-                MessageBox.Show("Please select a category to edit.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(@"Please select a category to edit.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -299,7 +299,7 @@ namespace InventorySystem.Forms.Admin
         {
             if (dgvCategories.CurrentRow == null)
             {
-                MessageBox.Show("Please select a category.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(@"Please select a category.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -338,7 +338,7 @@ namespace InventorySystem.Forms.Admin
         {
             if (dgvCategories.CurrentRow == null)
             {
-                MessageBox.Show("Please select a category to delete.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(@"Please select a category to delete.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -453,7 +453,7 @@ namespace InventorySystem.Forms.Admin
         {
             if (dgvUnits.CurrentRow == null)
             {
-                MessageBox.Show("Please select a unit to edit.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(@"Please select a unit to edit.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 
@@ -480,7 +480,7 @@ namespace InventorySystem.Forms.Admin
         {
             if (dgvUnits.CurrentRow == null)
             {
-                MessageBox.Show("Please select a unit to delete.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(@"Please select a unit to delete.", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
 

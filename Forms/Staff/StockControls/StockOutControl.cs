@@ -20,6 +20,10 @@ namespace InventorySystem.Forms.Staff {
             InitializeComponent();
         }
 
+        private void LoadRecords() {
+
+        }
+
         private void LoadComboBox()
         {
             var products = ProductService.All();
@@ -39,11 +43,11 @@ namespace InventorySystem.Forms.Staff {
         {
             if (cmbStockOutProducts.SelectedIndex == -1)
             {
-                MessageBox.Show("Please select a product.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(@"Please select a product.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            var selectedProduct = ProductService.All()[cmbStockOutProducts.SelectedIndex];
+            var selectedProduct = ProductService.GetByName(cmbStockOutProducts.SelectedItem.ToString());
             decimal quantity = NumStockOutQuantity.Value;
             string storageLocation = txtStockOutLocation.Text;
             string referenceNo = txtStockOutRefNo.Text;
