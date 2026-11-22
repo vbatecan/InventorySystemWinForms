@@ -28,6 +28,9 @@ namespace InventorySystem.Forms.Manager
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             lblTitle = new Label();
             lblSubTitle = new Label();
             picTitle = new PictureBox();
@@ -74,6 +77,7 @@ namespace InventorySystem.Forms.Manager
             Column2 = new DataGridViewTextBoxColumn();
             Column3 = new DataGridViewTextBoxColumn();
             Column4 = new DataGridViewTextBoxColumn();
+            chartInventory = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)picTitle).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -98,6 +102,7 @@ namespace InventorySystem.Forms.Manager
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvRecentActivity).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)chartInventory).BeginInit();
             SuspendLayout();
             // 
             // lblTitle
@@ -313,6 +318,7 @@ namespace InventorySystem.Forms.Manager
             // 
             pnlInventoryOverview.BackColor = Color.White;
             pnlInventoryOverview.BorderStyle = BorderStyle.FixedSingle;
+            pnlInventoryOverview.Controls.Add(chartInventory);
             pnlInventoryOverview.Controls.Add(pnlInventoryOverviewSub);
             pnlInventoryOverview.Location = new Point(8, 194);
             pnlInventoryOverview.Name = "pnlInventoryOverview";
@@ -575,6 +581,24 @@ namespace InventorySystem.Forms.Manager
             Column4.Name = "Column4";
             Column4.ReadOnly = true;
             // 
+            // chartInventory
+            // 
+            chartInventory.BorderlineColor = Color.Transparent;
+            chartInventory.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            chartArea1.Name = "ChartArea1";
+            chartInventory.ChartAreas.Add(chartArea1);
+            chartInventory.Dock = DockStyle.Bottom;
+            legend1.Name = "Legend1";
+            chartInventory.Legends.Add(legend1);
+            chartInventory.Location = new Point(0, 43);
+            chartInventory.Name = "chartInventory";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            chartInventory.Series.Add(series1);
+            chartInventory.Size = new Size(565, 160);
+            chartInventory.TabIndex = 2;
+            // 
             // ManagerDashboard
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -623,6 +647,7 @@ namespace InventorySystem.Forms.Manager
             panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvRecentActivity).EndInit();
+            ((System.ComponentModel.ISupportInitialize)chartInventory).EndInit();
             ResumeLayout(false);
         }
 
@@ -674,5 +699,6 @@ namespace InventorySystem.Forms.Manager
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private Button btnViewAll;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartInventory;
     }
 }
