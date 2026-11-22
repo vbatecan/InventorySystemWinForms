@@ -36,6 +36,22 @@ namespace InventorySystem.Services {
             }
         }
 
+        public List<Product> GetAllByProductId(List<int> productIds)
+        {
+            List<Product> products = new();
+            
+            using (MySqlConnection conn = Connection.GetConnection()) {
+                MySqlCommand cmd = new("SELECT * FROM Products WHERE ProductId IN @productIds", conn);
+                cmd.Parameters.AddWithValue("@productIds", productIds);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read()) {
+                    products.Add(Product.FromReader(reader));
+                }
+            }
+
+            return products;
+        }
+
         public void Save(Product product)
         {
             using (MySqlConnection conn = Connection.GetConnection()) {

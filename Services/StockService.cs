@@ -56,5 +56,18 @@ namespace InventorySystem.Services {
                 }
             }
         }
+
+        public int CountLowStock(int lowStockAlert = 20)
+        {
+            int count;
+            
+            using (MySqlConnection conn = Connection.GetConnection()) {
+                MySqlCommand cmd = new("SELECT COUNT(*) FROM Products p WHERE GetCurrentStock(p.ProductId) < @LowStockAlert", conn);
+                cmd.Parameters.AddWithValue("@LowStockAlert", lowStockAlert);
+                count = Convert.ToInt32(cmd.ExecuteScalar());
+            }
+
+            return count;
+        }
     }
 }
