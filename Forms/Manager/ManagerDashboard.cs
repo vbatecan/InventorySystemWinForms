@@ -14,5 +14,15 @@ namespace InventorySystem.Forms.Manager
         {
             InitializeComponent();
         }
+
+        private void lblTotalProducts_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fill(object sender, EventArgs e)
+        {
+
+        }
     }
 }

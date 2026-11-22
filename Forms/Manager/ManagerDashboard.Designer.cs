@@ -231,7 +231,6 @@
             lblTotalProducts.Size = new Size(123, 21);
             lblTotalProducts.TabIndex = 1;
             lblTotalProducts.Text = "Total Products ";
-            lblTotalProducts.Click += this.lblTotalProducts_Click;
             // 
             // lblTotalStock
             // 
@@ -592,7 +591,6 @@
             Margin = new Padding(2);
             Name = "ManagerDashboard";
             Size = new Size(984, 636);
-            DockChanged += this.fill;
             ((System.ComponentModel.ISupportInitialize)picTitle).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
