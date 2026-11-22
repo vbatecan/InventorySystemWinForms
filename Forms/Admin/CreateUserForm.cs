@@ -1,4 +1,4 @@
-﻿using InventorySystem.Exceptions;
+using InventorySystem.Exceptions;
 using InventorySystem.Models;
 using InventorySystem.Models.Enums;
 using InventorySystem.Services;
@@ -10,7 +10,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace InventorySystem.Forms.Superadmin {
+namespace InventorySystem.Forms.Admin {
     public partial class CreateUserForm : Form {
 
         private readonly UserService UserService = new UserService();

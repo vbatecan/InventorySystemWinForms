@@ -1,6 +1,6 @@
 using InventorySystem.Exceptions;
 using InventorySystem.Forms.Manager;
-using InventorySystem.Forms.Superadmin;
+using InventorySystem.Forms.Admin;
 using InventorySystem.Models;
 using InventorySystem.Models.Enums;
 using InventorySystem.Services;
