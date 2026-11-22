@@ -1,6 +1,6 @@
 ﻿namespace InventorySystem.Forms.Staff
 {
-    partial class DashboardControl
+    partial class StaffDashboardControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -56,6 +56,12 @@
             lblSearch = new Label();
             btnRefresh = new Button();
             btnSearch = new Button();
+            ProductID = new DataGridViewTextBoxColumn();
+            MovementType = new DataGridViewTextBoxColumn();
+            Quantity = new DataGridViewTextBoxColumn();
+            StorageLocation = new DataGridViewTextBoxColumn();
+            ReferenceNo = new DataGridViewTextBoxColumn();
+            CreatedBy = new DataGridViewTextBoxColumn();
             pnlPageHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picPageIcon).BeginInit();
             TotAvailProd.SuspendLayout();
@@ -244,6 +250,7 @@
             dgvTransactions.AllowUserToDeleteRows = false;
             dgvTransactions.BackgroundColor = Color.White;
             dgvTransactions.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvTransactions.Columns.AddRange(new DataGridViewColumn[] { ProductID, MovementType, Quantity, StorageLocation, ReferenceNo, CreatedBy });
             dgvTransactions.GridColor = Color.FromArgb(215, 226, 242);
             dgvTransactions.Location = new Point(0, 34);
             dgvTransactions.Name = "dgvTransactions";
@@ -378,6 +385,7 @@
             btnRefresh.TabIndex = 2;
             btnRefresh.Text = "Refresh";
             btnRefresh.UseVisualStyleBackColor = false;
+            btnRefresh.Click += btnRefresh_Click;
             // 
             // btnSearch
             // 
@@ -391,7 +399,43 @@
             btnSearch.Text = "Search";
             btnSearch.UseVisualStyleBackColor = false;
             // 
-            // DashboardControl
+            // ProductID
+            // 
+            ProductID.HeaderText = "Product ID";
+            ProductID.Name = "ProductID";
+            ProductID.ReadOnly = true;
+            // 
+            // MovementType
+            // 
+            MovementType.HeaderText = "Movement Type";
+            MovementType.Name = "MovementType";
+            MovementType.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            Quantity.HeaderText = "Quantity";
+            Quantity.Name = "Quantity";
+            Quantity.ReadOnly = true;
+            // 
+            // StorageLocation
+            // 
+            StorageLocation.HeaderText = "Location";
+            StorageLocation.Name = "StorageLocation";
+            StorageLocation.ReadOnly = true;
+            // 
+            // ReferenceNo
+            // 
+            ReferenceNo.HeaderText = "Reference";
+            ReferenceNo.Name = "ReferenceNo";
+            ReferenceNo.ReadOnly = true;
+            // 
+            // CreatedBy
+            // 
+            CreatedBy.HeaderText = "Created By";
+            CreatedBy.Name = "CreatedBy";
+            CreatedBy.ReadOnly = true;
+            // 
+            // StaffDashboardControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -406,7 +450,7 @@
             Controls.Add(LowStockProd);
             Controls.Add(TotAvailProd);
             Controls.Add(pnlPageHeader);
-            Name = "DashboardControl";
+            Name = "StaffDashboardControl";
             Size = new Size(1024, 681);
             Load += DashboardControl_Load;
             pnlPageHeader.ResumeLayout(false);
@@ -462,5 +506,11 @@
         private Button btnSearch;
         private TextBox txtSearchProduct;
         private Label lblSearch;
+        private DataGridViewTextBoxColumn ProductID;
+        private DataGridViewTextBoxColumn MovementType;
+        private DataGridViewTextBoxColumn Quantity;
+        private DataGridViewTextBoxColumn StorageLocation;
+        private DataGridViewTextBoxColumn ReferenceNo;
+        private DataGridViewTextBoxColumn CreatedBy;
     }
 }

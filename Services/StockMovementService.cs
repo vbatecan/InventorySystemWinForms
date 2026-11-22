@@ -1,29 +1,38 @@
 using InventorySystem.Exceptions;
+using InventorySystem.Models;
 using InventorySystem.Models.Enums;
 using InventorySystem.Shared;
 using MySql.Data.MySqlClient;
 
 namespace InventorySystem.Services {
-    public class TransactionService {
+    public class StockMovementService {
 
-        public void StockIn(long productId, decimal quantity, string? storageLocation = null, string? referenceNo = null, string? remarks = null, int? createdBy = null)
+        public int CountByCreatedAtRange(DateTime start, DateTime end)
         {
-            RecordMovement(MovementType.In, productId, quantity, storageLocation, referenceNo, remarks, createdBy);
+            using (MySqlConnection conn = Connection.GetConnection()) {
+                MySqlCommand cmd = new("SELECT * FROM StockMovements WHERE CreatedAt >= @startDate AND CreatedAt < @endDate", conn);
+                cmd.Parameters.AddWithValue("@startDate", start);
+                cmd.Parameters.AddWithValue("@endDate", end);
+
+                return Convert.ToInt32(cmd.ExecuteScalar());
+            }
         }
 
-        public void StockOut(long productId, decimal quantity, string? storageLocation = null, string? referenceNo = null, string? remarks = null, int? createdBy = null)
+        public List<StockMovement> All(int page = 0, int size = 25)
         {
-            RecordMovement(MovementType.Out, productId, quantity, storageLocation, referenceNo, remarks, createdBy);
-        }
+            List<StockMovement> movements = new();
+            using (MySqlConnection conn = Connection.GetConnection()) {
+                MySqlCommand cmd = new("SELECT * FROM StockMovements LIMIT @page, @size", conn);
+                cmd.Parameters.AddWithValue("@page", page);
+                cmd.Parameters.AddWithValue("@size", size);
+                MySqlDataReader reader = cmd.ExecuteReader();
 
-        public void AdjustIn(long productId, decimal quantity, string? storageLocation = null, string? referenceNo = null, string? remarks = null, int? createdBy = null)
-        {
-            RecordMovement(MovementType.AdjustIn, productId, quantity, storageLocation, referenceNo, remarks, createdBy);
-        }
+                while (reader.Read()) {
+                    movements.Add(StockMovement.FromReader(reader));
+                }
+            }
 
-        public void AdjustOut(long productId, decimal quantity, string? storageLocation = null, string? referenceNo = null, string? remarks = null, int? createdBy = null)
-        {
-            RecordMovement(MovementType.AdjustOut, productId, quantity, storageLocation, referenceNo, remarks, createdBy);
+            return movements;
         }
 
         public decimal GetStockLevel(long productId)
@@ -51,7 +60,6 @@ namespace InventorySystem.Services {
                 using (MySqlTransaction transaction = conn.BeginTransaction()) {
                     try {
                         long movementId = InsertMovement(conn, transaction, movementType, productId, quantity, storageLocation, referenceNo, remarks, createdBy);
-                        InsertAuditLog(conn, transaction, movementType, movementId, productId, quantity, createdBy);
                         transaction.Commit();
                     } catch {
                         transaction.Rollback();
@@ -78,23 +86,6 @@ namespace InventorySystem.Services {
             }
 
             return cmd.LastInsertedId;
-        }
-
-        private void InsertAuditLog(MySqlConnection conn, MySqlTransaction transaction, MovementType movementType, long movementId, long productId, decimal quantity, int? createdBy)
-        {
-            string newData = $"{{\"MovementId\":{movementId},\"ProductId\":{productId},\"MovementType\":\"{movementType}\",\"Quantity\":{quantity}}}";
-
-            MySqlCommand cmd = new MySqlCommand("INSERT INTO AuditLogs (ActorUserId, ActionType, EntityName, EntityId, NewData) VALUES (@actorUserId, @actionType, @entityName, @entityId, @newData)", conn, transaction);
-            cmd.Parameters.AddWithValue("@actorUserId", createdBy ?? (object) DBNull.Value);
-            cmd.Parameters.AddWithValue("@actionType", movementType.ToString());
-            cmd.Parameters.AddWithValue("@entityName", "StockMovement");
-            cmd.Parameters.AddWithValue("@entityId", movementId);
-            cmd.Parameters.AddWithValue("@newData", newData);
-
-            int result = cmd.ExecuteNonQuery();
-            if (result <= 0) {
-                throw new OperationFailedException("Failed to create audit log");
-            }
         }
     }
 }
