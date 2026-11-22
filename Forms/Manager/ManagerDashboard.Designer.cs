@@ -1,6 +1,6 @@
 ﻿namespace InventorySystem.Forms.Manager
 {
-    partial class dashboard
+    partial class ManagerDashboard
     {
         /// <summary> 
         /// Required designer variable.

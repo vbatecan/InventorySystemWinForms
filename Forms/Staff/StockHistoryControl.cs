@@ -20,5 +20,13 @@ namespace InventorySystem.Forms.Staff
         private void btnStockOutClear_Click(object sender, EventArgs e) {
 
         }
+
+        private void StockHistoryControl_Load(object sender, EventArgs e) {
+
+        }
+
+        private void ProductSearch_TextChanged(object sender, EventArgs e) {
+
+        }
     }
 }
