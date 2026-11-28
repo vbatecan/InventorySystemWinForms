@@ -33,7 +33,6 @@ namespace InventorySystem.Forms.Staff
                     stockMovement.ReferenceNo,
                     stockMovement.Remarks);
             });
-
         }
 
         private void ImportProductsToProductSelection() {
