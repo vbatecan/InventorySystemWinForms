@@ -74,7 +74,7 @@ namespace InventorySystem.Forms.Admin
                     newCat.IsActive = chkIsActive.Checked;
 
                     categoryService.Save(newCat);
-                    MessageBox.Show("Category created successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(@"Category created successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -83,7 +83,7 @@ namespace InventorySystem.Forms.Admin
                     editingCategory.IsActive = chkIsActive.Checked;
 
                     categoryService.Update(editingCategory);
-                    MessageBox.Show("Category updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(@"Category updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 DialogResult = DialogResult.OK;

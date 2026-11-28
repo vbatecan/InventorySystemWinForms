@@ -341,6 +341,7 @@
             Controls.Add(pnlPageHeader);
             Name = "StockOutControl";
             Size = new Size(1024, 681);
+            Load += StockOutControl_Load;
             pnlPageHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picPageIcon).EndInit();
             panel4.ResumeLayout(false);

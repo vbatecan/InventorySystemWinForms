@@ -59,5 +59,10 @@ namespace InventorySystem.Forms.Manager
         {
 
         }
+
+        private void chartStockTrend_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

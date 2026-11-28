@@ -187,7 +187,7 @@ def generate_audits(products, product_ids, actor_id):
         }
 
 
-def insert_parents(connection, data):
+def insert_parents(connection, data, *, clear=False):
     ids = {table: {} for table in TABLES}
     inserted = {table: 0 for table in TABLES}
     with connection.cursor() as cursor:
@@ -201,6 +201,9 @@ def insert_parents(connection, data):
             if (engines.get(table.lower()) or "").upper() != "INNODB":
                 raise ValueError(f"Expected existing InnoDB table {table}; apply db schema first.")
         connection.begin()
+        if clear:
+            for table in reversed(TABLES):
+                cursor.execute(f"DELETE FROM `{table}`")
         for table, rows in data.items():
             for local_id, original in enumerate(rows, 1):
                 row = original.copy()
@@ -281,7 +284,7 @@ def run_seed(args, connection=None):
         ids = {table: {i: i for i in range(1, len(rows) + 1)} for table, rows in parents.items()}
         counts = {table: len(parents.get(table, [])) for table in TABLES}
     else:
-        ids, counts = insert_parents(connection, parents)
+        ids, counts = insert_parents(connection, parents, clear=args.clear)
     username = parents["Users"][0]["Username"]
     fractional_units = {ids["Units"][i] for i, row in enumerate(parents["Units"], 1)
                         if row["AllowsFraction"]}
@@ -349,6 +352,8 @@ def parse_args(argv=None):
     parser.add_argument("--seed", type=int, default=42, help="Faker/random seed")
     parser.add_argument("--password", default="Seeder123!", help="password for generated demo users")
     parser.add_argument("--dry-run", action="store_true", help="generate without connecting to MySQL")
+    parser.add_argument("--clear", action="store_true",
+                        help="delete all rows from the seven inventory tables before inserting")
     args = parser.parse_args(argv)
     for name, value in PRESETS[args.preset].items():
         if getattr(args, name) is None:
@@ -374,6 +379,10 @@ def main(argv=None):
         print(f"Preset: {args.preset}; planned rows: {sum(planned_counts(args).values()):,}; "
               f"batch size: {args.batch_size:,}", flush=True)
         started = monotonic()
+        if args.clear:
+            action = "Would clear" if args.dry_run else "Clearing"
+            print(f"{action} all seven inventory tables in {options['database']} "
+                  f"at {options['host']}:{options['port']} before inserting.", flush=True)
         if args.dry_run:
             counts, username = run_seed(args)
             print("Dry run: generated all data; no database connection or writes.")
@@ -381,7 +390,10 @@ def main(argv=None):
             connection = pymysql.connect(**options)
             counts, username = run_seed(args, connection)
             connection.commit()
-            print("Committed seed data (matching existing categories and units reused).")
+            if args.clear:
+                print("Committed table cleanup and seed data.")
+            else:
+                print("Committed seed data (matching existing categories and units reused).")
         for table, count in counts.items():
             print(f"  {table}: {count:,}")
         print(f"Total: {sum(counts.values()):,} rows in {monotonic() - started:.1f}s")

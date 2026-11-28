@@ -36,6 +36,37 @@ namespace InventorySystem.Services {
             }
         }
 
+        public Product GetByName(string productName)
+        {
+            using (MySqlConnection conn = Connection.GetConnection()) {
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM Products WHERE ProductName = @productName", conn);
+                cmd.Parameters.AddWithValue("@productName", productName);
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows) {
+                    return Product.FromReader(reader);
+                }
+                
+                throw new EntityNotFoundException($"Product with name {productName} is not found");
+            }
+        }
+
+        public List<Product> GetAllByProductId(List<int> productIds)
+        {
+            List<Product> products = new();
+            
+            using (MySqlConnection conn = Connection.GetConnection()) {
+                MySqlCommand cmd = new("SELECT * FROM Products WHERE ProductId IN @productIds", conn);
+                cmd.Parameters.AddWithValue("@productIds", productIds);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read()) {
+                    products.Add(Product.FromReader(reader));
+                }
+            }
+
+            return products;
+        }
+
         public void Save(Product product)
         {
             using (MySqlConnection conn = Connection.GetConnection()) {
@@ -92,6 +123,14 @@ namespace InventorySystem.Services {
                     throw new EntityNotFoundException($"Product with id {productId} is not found");
                 }
             }
+        }
+
+        public int Count()
+        {
+            MySqlConnection conn = Connection.GetConnection();
+            MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM Products", conn);
+
+            return Convert.ToInt32(cmd.ExecuteScalar());
         }
     }
 }

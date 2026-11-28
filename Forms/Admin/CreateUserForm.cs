@@ -33,9 +33,9 @@ namespace InventorySystem.Forms.Admin {
 
             try {
                 UserService.SaveUser(userForm);
-                MessageBox.Show("User successfully created", "User", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"User successfully created", "User", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } catch (FailedCreateUserException) {
-                MessageBox.Show(" Failed to create user", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@" Failed to create user", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

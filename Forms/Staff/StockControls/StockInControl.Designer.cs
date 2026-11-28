@@ -52,6 +52,13 @@
             panel4 = new Panel();
             label6 = new Label();
             err = new ErrorProvider(components);
+            MovementID = new DataGridViewTextBoxColumn();
+            ProductID = new DataGridViewTextBoxColumn();
+            MovementType = new DataGridViewTextBoxColumn();
+            Quantity = new DataGridViewTextBoxColumn();
+            StorageLocation = new DataGridViewTextBoxColumn();
+            Reference = new DataGridViewTextBoxColumn();
+            Remarks = new DataGridViewTextBoxColumn();
             pnlPageHeader.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)picPageIcon).BeginInit();
             panel1.SuspendLayout();
@@ -280,6 +287,7 @@
             dgvStockInLog.AllowUserToDeleteRows = false;
             dgvStockInLog.BackgroundColor = Color.White;
             dgvStockInLog.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvStockInLog.Columns.AddRange(new DataGridViewColumn[] { MovementID, ProductID, MovementType, Quantity, StorageLocation, Reference, Remarks });
             dgvStockInLog.GridColor = Color.FromArgb(215, 226, 242);
             dgvStockInLog.Location = new Point(-1, 54);
             dgvStockInLog.Name = "dgvStockInLog";
@@ -312,6 +320,48 @@
             // 
             err.ContainerControl = this;
             // 
+            // MovementID
+            // 
+            MovementID.HeaderText = "ID";
+            MovementID.Name = "MovementID";
+            MovementID.ReadOnly = true;
+            // 
+            // ProductID
+            // 
+            ProductID.HeaderText = "Product ID";
+            ProductID.Name = "ProductID";
+            ProductID.ReadOnly = true;
+            // 
+            // MovementType
+            // 
+            MovementType.HeaderText = "Movement Type";
+            MovementType.Name = "MovementType";
+            MovementType.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            Quantity.HeaderText = "Quantity";
+            Quantity.Name = "Quantity";
+            Quantity.ReadOnly = true;
+            // 
+            // StorageLocation
+            // 
+            StorageLocation.HeaderText = "Location";
+            StorageLocation.Name = "StorageLocation";
+            StorageLocation.ReadOnly = true;
+            // 
+            // Reference
+            // 
+            Reference.HeaderText = "Reference";
+            Reference.Name = "Reference";
+            Reference.ReadOnly = true;
+            // 
+            // Remarks
+            // 
+            Remarks.HeaderText = "Remarks";
+            Remarks.Name = "Remarks";
+            Remarks.ReadOnly = true;
+            // 
             // StockInControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -323,6 +373,7 @@
             Controls.Add(pnlPageHeader);
             Name = "StockInControl";
             Size = new Size(1024, 681);
+            Load += StockInControl_Load;
             pnlPageHeader.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)picPageIcon).EndInit();
             panel1.ResumeLayout(false);
@@ -364,5 +415,12 @@
         private Button btnSaveStock;
         private Button btnClear;
         private ErrorProvider err;
+        private DataGridViewTextBoxColumn MovementID;
+        private DataGridViewTextBoxColumn ProductID;
+        private DataGridViewTextBoxColumn MovementType;
+        private DataGridViewTextBoxColumn Quantity;
+        private DataGridViewTextBoxColumn StorageLocation;
+        private DataGridViewTextBoxColumn Reference;
+        private DataGridViewTextBoxColumn Remarks;
     }
 }

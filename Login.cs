@@ -32,7 +32,7 @@ namespace InventorySystem
         {
             if (ValidationUtils.ValidateEmail(txtUsername.Text))
             {
-                MessageBox.Show("Email format is not valid", "Validation Error", MessageBoxButtons.OK,
+                MessageBox.Show(@"Email format is not valid", "Validation Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             } else if (!ValidationUtils.ValidatePassword(txtPassword.Text).Equals("valid"))
             {
@@ -41,19 +41,19 @@ namespace InventorySystem
 
             try {
 
-                User? user = authService.Login(txtUsername.Text, txtPassword.Text);
+                User user = authService.Login(txtUsername.Text, txtPassword.Text);
 
                 switch (user.UserRole) {
                     case UserRole.Admin:
-                        AdminForm superAdminForm = new AdminForm();
+                        AdminForm superAdminForm = new();
                         superAdminForm.Show();
                         break;
                     case UserRole.Staff:
-                        StaffForm staffForm = new StaffForm();
+                        StaffForm staffForm = new();
                         staffForm.Show();
                         break;
                     case UserRole.Manager:
-                        ManagerForm managerForm = new ManagerForm();
+                        ManagerForm managerForm = new();
                         managerForm.Show();
                         break;
                     default:
@@ -63,7 +63,7 @@ namespace InventorySystem
 
                 Hide();
             } catch (InvalidLoginDetailsException) {
-                MessageBox.Show("Username or password is invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(@"Username or password is invalid.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

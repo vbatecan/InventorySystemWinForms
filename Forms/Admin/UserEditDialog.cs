@@ -130,7 +130,7 @@ namespace InventorySystem.Forms.Admin
                     );
 
                     userService.SaveUser(newUser);
-                    MessageBox.Show("User created successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(@"User created successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -140,7 +140,7 @@ namespace InventorySystem.Forms.Admin
                     editingUser.IsActive = chkIsActive.Checked;
 
                     userService.UpdateUser(editingUser, password);
-                    MessageBox.Show("User updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(@"User updated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
                 DialogResult = DialogResult.OK;
